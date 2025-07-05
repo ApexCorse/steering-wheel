@@ -335,6 +335,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/MenuTile.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/MenuTile.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/DriveScreenPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/drivescreen_screen/DriveScreenPresenter.cpp</locationURI>
@@ -483,6 +488,11 @@
 			<name>Application/User/generated/FrontendApplicationBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/MenuTileBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/MenuTileBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/DriveScreenViewBase.cpp</name>

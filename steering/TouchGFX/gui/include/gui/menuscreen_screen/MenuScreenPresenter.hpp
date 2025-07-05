@@ -4,6 +4,8 @@
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
+#include <vector>
+
 using namespace touchgfx;
 
 class MenuScreenView;
@@ -27,10 +29,24 @@ public:
 
     virtual ~MenuScreenPresenter() {}
 
+    void setMenuTiles(std::vector<char*> menuTiles) override;
+    void handleButtonDown() override;
+    void handleButtonUp() override;
+    void handleButtonConfirm() override;
+    void handleButtonBack() override;
 private:
     MenuScreenPresenter();
 
     MenuScreenView& view;
+    std::vector<char*> menuTiles;
+
+    int currentIndex;
+    int firstTileIndex;
+    int lastTileIndex;
+
+    void adaptIndexes();
+    void updateMenuTilesInView();
+    void setSelected();
 };
 
 #endif // MENUSCREENPRESENTER_HPP

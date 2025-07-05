@@ -53,7 +53,7 @@
             "X": 267,
             "Y": 305,
             "Width": 266,
-            "Height": 36,
+            "Height": 40,
             "TextId": "__SingleUse_EQH4",
             "TextRotation": "0",
             "Color": {
@@ -154,7 +154,63 @@
       },
       {
         "Name": "MenuScreen",
-        "Components": [],
+        "CanvasBufferSize": 12000,
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "menuTile4",
+            "Y": 393,
+            "Width": 800,
+            "Height": 85,
+            "CustomContainerDefinitionName": "MenuTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "menuTile3",
+            "Y": 308,
+            "Width": 800,
+            "Height": 85,
+            "CustomContainerDefinitionName": "MenuTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "menuTile2",
+            "Y": 223,
+            "Width": 800,
+            "Height": 85,
+            "CustomContainerDefinitionName": "MenuTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "menuTile1",
+            "Y": 138,
+            "Width": 800,
+            "Height": 85,
+            "CustomContainerDefinitionName": "MenuTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "menuTile0",
+            "Y": 53,
+            "Width": 800,
+            "Height": 85,
+            "CustomContainerDefinitionName": "MenuTile"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "menuHeader",
+            "Y": 13,
+            "Width": 800,
+            "Height": 40,
+            "TextId": "__SingleUse_7U6K",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          }
+        ],
         "Interactions": []
       },
       {
@@ -168,7 +224,63 @@
         "Interactions": []
       }
     ],
-    "CustomContainerDefinitions": [],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "MenuTile",
+        "X": -160,
+        "Y": 338,
+        "Width": 800,
+        "Height": 85,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 800,
+            "Height": 85
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tileName",
+            "X": 21,
+            "Y": 26,
+            "Width": 102,
+            "Height": 40,
+            "TextId": "__SingleUse_0VQS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_CBIL",
+              "UseBuffer": true,
+              "BufferSize": 17
+            }
+          },
+          {
+            "Type": "Line",
+            "Name": "divider",
+            "Y": 77,
+            "Width": 800,
+            "Height": 16,
+            "Color": {
+              "Red": 92,
+              "Green": 92,
+              "Blue": 92
+            },
+            "StartX": 20.0,
+            "StartY": 5.0,
+            "EndX": 780.0,
+            "EndY": 5.0,
+            "LineWidth": 2.0,
+            "LineEndingStyle": "Round"
+          }
+        ],
+        "Interactions": []
+      }
+    ],
     "Name": "STM32F469I-DISCO",
     "Resolution": {
       "Width": 480,

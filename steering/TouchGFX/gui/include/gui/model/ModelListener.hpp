@@ -3,6 +3,8 @@
 
 #include <gui/model/Model.hpp>
 
+#include <vector>
+
 class ModelListener
 {
 public:
@@ -20,6 +22,13 @@ public:
     virtual void setAvgTemp(int avgTemp) {}
     virtual void setBatteryLevel(int batteryLevel, int minBatteryLevel, int maxBatteryLevel) {}
     virtual void setBatteryPower(int batteryPower, int minBatteryPower, int maxBatteryPower) {}
+
+    virtual void setMenuTiles(std::vector<char*> menuTiles) {}
+
+    virtual void handleButtonDown() {}
+    virtual void handleButtonUp() {}
+    virtual void handleButtonConfirm() {}
+    virtual void handleButtonBack() {}
 protected:
     Model* model;
 };

@@ -220,6 +220,18 @@
     <Filter Include="Header Files\generated\gui_generated\menuscreen_screen">
       <UniqueIdentifier>8809F4EE-E5B4-41FC-D56B-A45268C8E0E8</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\containers">
+      <UniqueIdentifier>A70D62B2-B096-30DA-0A14-38BF0A1D80DC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\containers">
+      <UniqueIdentifier>C5C23A27-E9B9-83FE-8EC4-77442D40F51A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\containers">
+      <UniqueIdentifier>F4873227-865A-C65F-8083-C12FA85764C3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\containers">
+      <UniqueIdentifier>B585F35F-E931-C728-35A5-274317E09908</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -287,6 +299,12 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\sectionscreen_screen\SectionScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\sectionscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\MenuTile.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\MenuTileBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -765,6 +783,12 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\sectionscreen_screen\SectionScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\sectionscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\MenuTile.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\MenuTileBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

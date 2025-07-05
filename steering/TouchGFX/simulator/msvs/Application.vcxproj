@@ -33,6 +33,8 @@
     <ClCompile Include="..\..\gui\src\sectionscreen_screen\SectionScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\sectionscreen_screen\SectionScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\sectionscreen_screen\SectionScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\MenuTile.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\MenuTileBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -195,6 +197,8 @@
     <ClInclude Include="..\..\gui\include\gui\sectionscreen_screen\SectionScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\sectionscreen_screen\SectionScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\sectionscreen_screen\SectionScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\MenuTile.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\MenuTileBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
