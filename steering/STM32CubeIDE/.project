@@ -260,6 +260,16 @@
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Middlewares/Third_Party/FreeRTOS/Source/timers.c</locationURI>
 		</link>
 		<link>
+			<name>Middlewares/tiny_json/tiny_json.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Middlewares/Third_Party/tiny_json/tiny_json.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/tiny_json/tiny_json.h</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Middlewares/Third_Party/tiny_json/tiny_json.h</locationURI>
+		</link>
+		<link>
 			<name>Drivers/BSP/Components/nt35510.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Drivers/BSP/Components/nt35510/nt35510.c</locationURI>
