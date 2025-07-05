@@ -31,13 +31,22 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_CBIL" Alignment="Left" TypographyId="Primary_Medium">
+        <Translation Language="GB">Name</Translation>
+      </Text>
+      <Text Id="__SingleUse_0VQS" Alignment="Left" TypographyId="Primary_Medium">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_7U6K" Alignment="Center" TypographyId="Primary_Medium">
+        <Translation Language="GB">MENU</Translation>
+      </Text>
       <Text Id="__SingleUse_2BRM" Alignment="Left" TypographyId="Primary_Small">
         <Translation Language="GB">DRIVE MODE</Translation>
       </Text>
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Primary_Medium" Font="Orbitron-VariableFont_wght.ttf" Size="32" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters=":, " WildcardCharacterRanges="0-9" />
+    <Typography Id="Primary_Medium" Font="Orbitron-VariableFont_wght.ttf" Size="32" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters=":, " WildcardCharacterRanges="0-9,a-z,A-Z" />
     <Typography Id="Primary_Large" Font="Orbitron-VariableFont_wght.ttf" Size="144" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="a-z,0-9,A-Z" />
     <Typography Id="Primary_Small" Font="Orbitron-VariableFont_wght.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
     <Typography Id="Secondary_Medium" Font="verdana.ttf" Size="32" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
