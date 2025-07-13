@@ -35,9 +35,19 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>Logic</name>
+			<type>2</type>
+			<locationURI>$%257BPARENT-1-PROJECT_LOC%257D/Logic</locationURI>
+		</link>
+		<link>
 			<name>STM32F469I-DISCO.ioc</name>
 			<type>1</type>
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/STM32F469I-disco.ioc</locationURI>
+		</link>
+		<link>
+			<name>Configuration/JSON</name>
+			<type>2</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Config</locationURI>
 		</link>
 		<link>
 			<name>Application/User/freertos.c</name>
