@@ -1,6 +1,8 @@
 #include <cstring>
 #include <JsonBase.hpp>
 
+JsonBase::JsonBase() {}
+
 JsonBase::JsonBase(json_t const *json): json(json) {
   json_t const *nameJson = getPropertyOfType("name", JSON_TEXT);
   if (!nameJson) return;

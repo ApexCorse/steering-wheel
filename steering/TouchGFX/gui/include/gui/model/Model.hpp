@@ -1,6 +1,8 @@
 #ifndef MODEL_HPP
 #define MODEL_HPP
 
+#include <Configuration.hpp>
+
 class ModelListener;
 
 class Model
@@ -21,6 +23,10 @@ protected:
     int avgTemp;
     int batteryLevel;
     int batteryPower;
+
+    Configuration *configuration;
+    char chosenSection[256];
+    char chosenModule[256];
 };
 
 #endif // MODEL_HPP

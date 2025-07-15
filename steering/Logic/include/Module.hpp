@@ -1,5 +1,5 @@
-#ifndef MODULE_H
-#define MODULE_H
+#ifndef MODULE_HPP
+#define MODULE_HPP
 
 #include <JsonBase.hpp>
 #include <Measurement.hpp>
@@ -8,13 +8,16 @@ class Module : public JsonBase {
 public:
   Module();
   Module(json_t const *json);
-  static const size_t MAX_MEASUREMENTS = 64;
 
-  void getMeasurements(Measurement (&arr)[MAX_MEASUREMENTS]);
-  size_t getNMeasurements();
+  Module *next;
+
+  uint8_t getNMeasurements();
+  Measurement *getFirstMeasurement();
+  Measurement *getMeasurementByName(const char *name);
 private:
-  Measurement measurements[MAX_MEASUREMENTS];
-  size_t nMeasurements;
+  // Linked list
+  Measurement *firstMeasurement;
+  uint8_t nMeasurements;
 };
 
 #endif

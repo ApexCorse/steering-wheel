@@ -1,5 +1,5 @@
-#ifndef SECTION_H
-#define SECTION_H
+#ifndef SECTION_HPP
+#define SECTION_HPP
 
 #include <JsonBase.hpp>
 #include <Module.hpp>
@@ -8,13 +8,16 @@ class Section : public JsonBase {
 public:
   Section();
   Section(json_t const *json);
-  static const size_t MAX_MODULES = 16;
 
-  void getModules(Module (&arr)[MAX_MODULES]);
-  size_t getNModules();
+  Section *next;
+
+  uint8_t getNModules();
+  Module *getFirstModule();
+  Module *getModuleByName(const char *name);
 private:
-  Module modules[MAX_MODULES];
-  size_t nModules;
+  // Linked list
+  Module *firstModule;
+  uint8_t nModules;
 };
 
 #endif
