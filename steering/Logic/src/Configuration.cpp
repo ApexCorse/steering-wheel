@@ -1,38 +1,57 @@
 #include <Configuration.hpp>
 #include <json_config.h>
+#include <cstring>
 
 Configuration::Configuration()
 {
   json = json_create(json_config_json, array, 2048);
-}
 
-json_t const *Configuration::getSection(const char *name) {
   json_t const *sections = json_getProperty(json, "sections");
-  if (!sections) return nullptr;
+  if (!sections || json_getType(sections) != JSON_ARRAY) return;
 
-  json_t const *section = json_getProperty(sections, name);
-  if (!section || json_getType(section) != JSON_OBJ) 
-    return nullptr;
+  json_t const *currentJsonSection = json_getChild(sections);
+  if (!currentJsonSection) return;
 
-  return section;
+  firstSection = new Section(currentJsonSection);
+  firstSection->next = nullptr;
+  Section *currentSection = firstSection;
+  nSections = 1;
+
+  currentJsonSection = json_getSibling(currentJsonSection);
+
+  while (currentJsonSection) {
+    Section *newSection = new Section(currentJsonSection);
+    newSection->next = nullptr;
+    currentSection->next = newSection;
+    currentSection = newSection;
+
+    nSections++;
+    currentJsonSection = json_getSibling(currentJsonSection);
+  }
 }
 
-json_t const *Configuration::getModule(json_t const *section, const char *name) {
-  if (!section) return nullptr;
-
-  json_t const *module_json = json_getProperty(section, name);
-  if (!module_json || json_getType(module_json) != JSON_OBJ)
-    return nullptr;
-
-  return module_json;
+uint8_t Configuration::getNSections()
+{
+  return nSections;
 }
 
-json_t const *Configuration::getMeasurement(json_t const *module, const char *name) {
-  if (!module) return nullptr;
+Section *Configuration::getFirstSection()
+{
+  return firstSection;
+}
 
-  json_t const *measurement = json_getProperty(module, name);
-  if (!measurement || json_getType(measurement) != JSON_OBJ)
-    return nullptr;
+Section *Configuration::getSectionByName(const char *name)
+{
+  uint8_t i = 0;
+  Section *current = firstSection;
 
-  return measurement;
+  while (current && i < nSections) {
+    if (strcmp(current->getName(), name) == 0)
+      return current;
+
+    i++;
+    current = current->next;
+  }
+  
+  return nullptr;
 }
