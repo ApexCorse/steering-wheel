@@ -31,6 +31,30 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_2KDQ" Alignment="Left" TypographyId="Secondary_Medium">
+        <Translation Language="GB">Label</Translation>
+      </Text>
+      <Text Id="__SingleUse_SRCR" Alignment="Left" TypographyId="Primary_Value">
+        <Translation Language="GB">Value</Translation>
+      </Text>
+      <Text Id="__SingleUse_MAGF" Alignment="Center" TypographyId="Primary_Value">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_O06S" Alignment="Center" TypographyId="Secondary_Medium">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_93XF" Alignment="Left" TypographyId="Primary_Medium">
+        <Translation Language="GB">Module Name</Translation>
+      </Text>
+      <Text Id="__SingleUse_PYL6" Alignment="Left" TypographyId="Primary_Medium">
+        <Translation Language="GB">  &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_8R4N" Alignment="Left" TypographyId="Primary_Medium">
+        <Translation Language="GB">Section Name</Translation>
+      </Text>
+      <Text Id="__SingleUse_6NHY" Alignment="Center" TypographyId="Primary_Medium">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_CBIL" Alignment="Left" TypographyId="Primary_Medium">
         <Translation Language="GB">Name</Translation>
       </Text>
@@ -50,5 +74,6 @@
     <Typography Id="Primary_Large" Font="Orbitron-VariableFont_wght.ttf" Size="144" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="a-z,0-9,A-Z" />
     <Typography Id="Primary_Small" Font="Orbitron-VariableFont_wght.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
     <Typography Id="Secondary_Medium" Font="verdana.ttf" Size="32" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="Primary_Value" Font="Orbitron-VariableFont_wght.ttf" Size="64" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
   </Typographies>
 </TextDatabase>

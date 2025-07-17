@@ -91,6 +91,8 @@
                   <listOptionValue builtIn="false" value="../../TouchGFX/gui/include"/>
                   <listOptionValue builtIn="false" value="../../TouchGFX/generated/videos/include"/>
                   <listOptionValue builtIn="false" value="../../Middlewares/Third_Party/tiny_json"/>
+                  <listOptionValue builtIn="false" value="../../Logic/inc"/>
+                  <listOptionValue builtIn="false" value="../../Config"/>
                 </option>
                 <inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1036047372" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
               </tool>
@@ -162,7 +164,9 @@
     </cconfiguration>
     <cconfiguration id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.release.132034005">
       <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.release.132034005" moduleId="org.eclipse.cdt.core.settings" name="Release">
-        <externalSettings/>
+        <externalSettings>
+          <externalSetting/>
+        </externalSettings>
         <extensions>
           <extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
           <extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
@@ -247,6 +251,7 @@
                   <listOptionValue builtIn="false" value="../../Middlewares/Third_Party/tiny_json"/>
                   <listOptionValue builtIn="false" value="../../Logic/include"/>
                   <listOptionValue builtIn="false" value="../../Config"/>
+                  <listOptionValue builtIn="false" value="../../Logic/inc"/>
                 </option>
                 <inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1751818057" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
               </tool>

@@ -252,8 +252,129 @@
       },
       {
         "Name": "SectionScreen",
-        "Components": [],
-        "Interactions": []
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "sectionName",
+            "Width": 800,
+            "Height": 40,
+            "TextId": "__SingleUse_6NHY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_8R4N",
+              "UseBuffer": true,
+              "BufferSize": 16
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "moduleTile4",
+            "Y": 392,
+            "Width": 500,
+            "Height": 88,
+            "CustomContainerDefinitionName": "ModuleTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "moduleTile3",
+            "Y": 304,
+            "Width": 500,
+            "Height": 88,
+            "CustomContainerDefinitionName": "ModuleTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "moduleTile2",
+            "Y": 216,
+            "Width": 500,
+            "Height": 88,
+            "CustomContainerDefinitionName": "ModuleTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "moduleTile1",
+            "Y": 128,
+            "Width": 500,
+            "Height": 88,
+            "CustomContainerDefinitionName": "ModuleTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "moduleTile0",
+            "Y": 40,
+            "Width": 500,
+            "Height": 88,
+            "CustomContainerDefinitionName": "ModuleTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "generalMeasurement2",
+            "X": 500,
+            "Y": 342,
+            "Width": 300,
+            "Height": 138,
+            "CustomContainerDefinitionName": "GeneralMeasurement"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "generalMeasurement1",
+            "X": 500,
+            "Y": 191,
+            "Width": 300,
+            "Height": 138,
+            "CustomContainerDefinitionName": "GeneralMeasurement"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "generalMeasurement0",
+            "X": 500,
+            "Y": 40,
+            "Width": 300,
+            "Height": 138,
+            "CustomContainerDefinitionName": "GeneralMeasurement"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call SectionScreen gotoMenuScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "MenuScreen"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call SectionScreen gotoModuleScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "ModuleScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "gotoModuleScreen"
+          },
+          {
+            "Name": "gotoMenuScreen"
+          }
+        ]
       },
       {
         "Name": "ModuleScreen",
@@ -313,6 +434,87 @@
           }
         ],
         "Interactions": []
+      },
+      {
+        "Name": "ModuleTile",
+        "X": -160,
+        "Y": 370,
+        "Width": 500,
+        "Height": 88,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 500,
+            "Height": 88
+          },
+          {
+            "Type": "TextArea",
+            "Name": "moduleName",
+            "Width": 500,
+            "Height": 88,
+            "TextId": "__SingleUse_PYL6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_93XF",
+              "UseBuffer": true,
+              "BufferSize": 16
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "GeneralMeasurement",
+        "X": 90,
+        "Y": 347,
+        "Width": 300,
+        "Height": 138,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "label",
+            "Y": 98,
+            "Width": 300,
+            "Height": 40,
+            "TextId": "__SingleUse_O06S",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 204,
+              "Green": 204,
+              "Blue": 204
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_2KDQ",
+              "UseBuffer": true,
+              "BufferSize": 16
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "value",
+            "Width": 300,
+            "Height": 82,
+            "TextId": "__SingleUse_MAGF",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_SRCR",
+              "UseBuffer": true,
+              "BufferSize": 6
+            }
+          }
+        ],
+        "Interactions": []
       }
     ],
     "Name": "STM32F469I-DISCO",
@@ -321,7 +523,7 @@
       "Height": 800
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "MenuScreen",
+    "StartupScreenName": "SectionScreen",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",
