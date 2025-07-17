@@ -360,14 +360,14 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/GeneralMeasurement.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/MenuTile.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/MenuTile.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/gui/ModuleTile.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/ModuleTile.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/SectionTile.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/SectionTile.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/DriveScreenPresenter.cpp</name>
@@ -540,14 +540,14 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/GeneralMeasurementBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/MenuTileBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/MenuTileBase.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/ModuleTileBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/ModuleTileBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/SectionTileBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/SectionTileBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/DriveScreenViewBase.cpp</name>

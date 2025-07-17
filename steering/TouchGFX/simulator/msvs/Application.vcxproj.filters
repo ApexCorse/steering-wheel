@@ -300,12 +300,6 @@
     <ClCompile Include="..\..\generated\gui_generated\src\sectionscreen_screen\SectionScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\sectionscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\MenuTile.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\MenuTileBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\containers\GeneralMeasurement.cpp">
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
@@ -316,6 +310,12 @@
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\ModuleTileBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\SectionTile.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SectionTileBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
   </ItemGroup>
@@ -796,12 +796,6 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\sectionscreen_screen\SectionScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\sectionscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\MenuTile.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\MenuTileBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\GeneralMeasurement.hpp">
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
@@ -812,6 +806,12 @@
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ModuleTileBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\SectionTile.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SectionTileBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>

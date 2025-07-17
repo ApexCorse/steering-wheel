@@ -27,27 +27,29 @@ public:
 
     virtual ~MenuScreenPresenter() {}
 
-    void setMenuItems(char* menuItems[], int nMenuItems) override;
+    void setSections(Section *sections[], uint8_t nSection) override;
     void handleButtonDown() override;
     void handleButtonUp() override;
     void handleButtonConfirm() override;
     void handleButtonBack() override;
+
+    static const uint8_t MAX_SECTIONS = 16;
 private:
     MenuScreenPresenter();
     
     MenuScreenView& view;
 
     void adaptIndexes();
-    void updateMenuTilesInView();
+    void updateSectionTilesInView();
     void setSelected();
 
     int currentIndex;
     int firstTileIndex;
     int lastTileIndex;
 
-    const int NUM_TILES_TO_SHOW = 4;
-    int nMenuItems;
-    char* menuItems[16];
+    const uint8_t NUM_TILES_TO_SHOW = 5;
+    uint8_t nSections;
+    Section *sections[MAX_SECTIONS];
 };
 
 #endif // MENUSCREENPRESENTER_HPP

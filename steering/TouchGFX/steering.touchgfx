@@ -157,43 +157,43 @@
         "Components": [
           {
             "Type": "CustomContainerInstance",
-            "Name": "menuTile4",
+            "Name": "sectionTile4",
             "Y": 393,
             "Width": 800,
             "Height": 85,
-            "CustomContainerDefinitionName": "MenuTile"
+            "CustomContainerDefinitionName": "SectionTile"
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "menuTile3",
+            "Name": "sectionTile3",
             "Y": 308,
             "Width": 800,
             "Height": 85,
-            "CustomContainerDefinitionName": "MenuTile"
+            "CustomContainerDefinitionName": "SectionTile"
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "menuTile2",
+            "Name": "sectionTile2",
             "Y": 223,
             "Width": 800,
             "Height": 85,
-            "CustomContainerDefinitionName": "MenuTile"
+            "CustomContainerDefinitionName": "SectionTile"
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "menuTile1",
+            "Name": "sectionTile1",
             "Y": 138,
             "Width": 800,
             "Height": 85,
-            "CustomContainerDefinitionName": "MenuTile"
+            "CustomContainerDefinitionName": "SectionTile"
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "menuTile0",
+            "Name": "sectionTile0",
             "Y": 53,
             "Width": 800,
             "Height": 85,
-            "CustomContainerDefinitionName": "MenuTile"
+            "CustomContainerDefinitionName": "SectionTile"
           },
           {
             "Type": "TextArea",
@@ -383,7 +383,7 @@
     ],
     "CustomContainerDefinitions": [
       {
-        "Name": "MenuTile",
+        "Name": "SectionTile",
         "X": -160,
         "Y": 338,
         "Width": 800,
@@ -397,7 +397,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "tileName",
+            "Name": "sectionName",
             "Width": 800,
             "Height": 85,
             "TextId": "__SingleUse_0VQS",

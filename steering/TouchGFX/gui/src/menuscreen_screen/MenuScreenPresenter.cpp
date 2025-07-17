@@ -12,7 +12,7 @@ MenuScreenPresenter::MenuScreenPresenter(MenuScreenView& v)
 
 void MenuScreenPresenter::activate()
 {
-    model->initMenuItems();
+    model->initSections();
 }
 
 void MenuScreenPresenter::deactivate()
@@ -20,58 +20,69 @@ void MenuScreenPresenter::deactivate()
 
 }
 
-void MenuScreenPresenter::setMenuItems(char* menuItems[], int nMenuItems)
+void MenuScreenPresenter::setSections(Section *sections[], uint8_t nSections)
 {
-    this->nMenuItems = nMenuItems;
+    this->nSections = nSections;
 
-    for (int i = 0; i < nMenuItems; ++i) {
-        this->menuItems[i] = menuItems[i];
+    for (int i = 0; i < nSections; ++i) {
+        this->sections[i] = sections[i];
     }
 
     currentIndex = 0; 
     firstTileIndex = 0;
    
-    lastTileIndex = std::min(nMenuItems - 1, NUM_TILES_TO_SHOW - 1);
+    lastTileIndex = static_cast<uint8_t>(
+        std::min(
+            static_cast<int>(nSections) - 1, 
+            static_cast<int>(NUM_TILES_TO_SHOW) - 1
+        )
+    );
 
-    updateMenuTilesInView();
+    updateSectionTilesInView();
     setSelected();
 }
 
 void MenuScreenPresenter::handleButtonDown()
 {
-    if (!nMenuItems) {
-        return;
-    }
-    currentIndex = std::min(currentIndex + 1, nMenuItems - 1);
+    if (!nSections) return;
+
+    currentIndex = static_cast<uint8_t>(
+        std::min(
+            static_cast<int>(currentIndex) + 1,
+            static_cast<int>(nSections) - 1
+        )
+    );
+
     adaptIndexes();
-    updateMenuTilesInView();
+    updateSectionTilesInView();
     setSelected();
 }
 
 void MenuScreenPresenter::handleButtonUp()
 {
-    if (!nMenuItems) {
-        return;
-    }
-    currentIndex = std::max(currentIndex - 1, 0);
+    if (!nSections) return;
+
+    currentIndex = static_cast<uint8_t>(
+        std::min(
+            static_cast<int>(currentIndex) - 1,
+            0
+        )
+    );
+
     adaptIndexes();
-    updateMenuTilesInView();
+    updateSectionTilesInView();
     setSelected();
 }
 
 void MenuScreenPresenter::handleButtonConfirm()
 {
-    if (currentIndex < 0 || currentIndex >= nMenuItems) {
-        return;
-    }
+    if (currentIndex < static_cast<uint8_t>(0) || currentIndex >= nSections) return;
 
-    if (menuItems[currentIndex] == nullptr) {
-        return;
-    }
+    if (sections[currentIndex] == nullptr) return;
 
-    if (strcmp(menuItems[currentIndex], "Drive") == 0) {
+    if (strcmp(sections[currentIndex]->getName(), "Drive") == 0) {
         view.gotoDriveScreen();
-    } else if (strcmp(menuItems[currentIndex], "Start Up") == 0) {
+    } else if (strcmp(sections[currentIndex]->getName(), "Start Up") == 0) {
         view.gotoStartUpScreen();
     } else {
         view.gotoSectionScreen();
@@ -85,43 +96,64 @@ void MenuScreenPresenter::handleButtonBack()
 
 void MenuScreenPresenter::adaptIndexes()
 {
-    if (!nMenuItems) {
-        firstTileIndex = 0;
-        lastTileIndex = 0;
+    if (!nSections) {
+        firstTileIndex = static_cast<uint8_t>(0);
+        lastTileIndex = static_cast<uint8_t>(0);
         return;
     }
 
     if (currentIndex < firstTileIndex) {
         firstTileIndex = currentIndex;
-        lastTileIndex = firstTileIndex + NUM_TILES_TO_SHOW - 1;
+        lastTileIndex = static_cast<uint8_t>(
+            static_cast<int>(firstTileIndex) + static_cast<int>(NUM_TILES_TO_SHOW) - 1
+        );
     } else if (currentIndex > lastTileIndex) {
-        firstTileIndex = currentIndex - (NUM_TILES_TO_SHOW - 1);
+        firstTileIndex = static_cast<uint8_t>(
+            static_cast<int>(currentIndex) - static_cast<int>(NUM_TILES_TO_SHOW) - 1
+        );
         lastTileIndex = currentIndex;
     }
 
-    if (lastTileIndex >= nMenuItems) {
-        lastTileIndex = nMenuItems - 1;
-        firstTileIndex = std::max(0, lastTileIndex - (NUM_TILES_TO_SHOW - 1));
+    if (lastTileIndex >= nSections) {
+        lastTileIndex = static_cast<uint8_t>(nSections - 1);
+        firstTileIndex = static_cast<uint8_t>(
+            std::max(
+                0,
+                static_cast<int>(lastTileIndex) - static_cast<int>(NUM_TILES_TO_SHOW) - 1
+            )
+        );
     }
-    if (firstTileIndex < 0) {
-        firstTileIndex = 0;
-        lastTileIndex = std::min(nMenuItems - 1, NUM_TILES_TO_SHOW - 1);
+    if (firstTileIndex < static_cast<uint8_t>(0)) {
+        firstTileIndex = static_cast<uint8_t>(0);
+        lastTileIndex = static_cast<uint8_t>(
+            std::min(
+                static_cast<int>(nSections) - 1,
+                static_cast<int>(NUM_TILES_TO_SHOW) - 1
+            )
+        );
     }
 }
 
-void MenuScreenPresenter::updateMenuTilesInView()
+void MenuScreenPresenter::updateSectionTilesInView()
 {
-    int actualFirst = std::max(0, firstTileIndex);
-    int actualLast = std::min(nMenuItems - 1, lastTileIndex);
+    uint8_t actualFirst = static_cast<uint8_t>(
+        std::max(0, static_cast<int>(firstTileIndex))
+    );
+    uint8_t actualLast = static_cast<uint8_t>(
+        std::min(
+            static_cast<int>(nSections) - 1,
+            static_cast<int>(lastTileIndex)
+        )
+    );
 
-    char* vectorToPass[actualLast - actualFirst + 1];
-    if (actualFirst <= actualLast && nMenuItems > 0) {
-        for (int i = actualFirst; i <= actualLast; ++i) {
-            vectorToPass[i - actualFirst] = menuItems[i];
+    Section *arrayToPass[static_cast<size_t>(actualLast - actualFirst + 1)];
+    if (actualFirst <= actualLast && nSections > 0) {
+        for (uint8_t i = actualFirst; i <= actualLast; ++i) {
+            arrayToPass[i - actualFirst] = sections[i];
         }
     }
 
-    view.setMenuTiles(vectorToPass, actualLast - actualFirst + 1);
+    view.setSections(arrayToPass, static_cast<uint8_t>(actualLast - actualFirst + 1));
 }
 
 void MenuScreenPresenter::setSelected()
