@@ -12,7 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-    void setMenuTiles(char *menuTiles[], int nMenuTiles);
+    void setSections(Section *sections[], uint8_t nSections);
     void setSelected(int index);
 private:
     void reset();

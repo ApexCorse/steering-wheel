@@ -1,6 +1,7 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 #include <gui/sectionscreen_screen/SectionScreenPresenter.hpp>
+#include <gui/menuscreen_screen/MenuScreenPresenter.hpp>
 
 #include <cstring>
 
@@ -9,12 +10,22 @@ Model::Model() : modelListener(0), configuration(nullptr), chosenSection(""), ch
   configuration = new Configuration();
 }
 
-void Model::initMenuItems()
+void Model::initSections()
 {
-  int nMenuItems = 0;
-  char *menuItems[nMenuItems] = {};
+  Section *sections[SectionScreenPresenter::MAX_MODULES];
+  uint8_t nSections = configuration->getNSections();
 
-  modelListener->setMenuItems(menuItems, nMenuItems);
+  Section *current = configuration->getFirstSection();
+  uint8_t i = 0;
+
+  while (current && nSections < MenuScreenPresenter::MAX_SECTIONS) {
+    sections[i] = current;
+
+    i++;
+    current = current->next;
+  }
+
+  modelListener->setSections(sections, nSections);
 }
 
 void Model::initSectionMenu()

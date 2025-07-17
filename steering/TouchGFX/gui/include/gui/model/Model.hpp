@@ -16,7 +16,7 @@ public:
     }
 
     void tick();
-    void initMenuItems();
+    void initSections();
     void initSectionMenu();
     void initSectionTitle();
 
