@@ -2,7 +2,7 @@
 
 MenuScreenView::MenuScreenView()
 {
-    menuTile4.setDividerVisible(false);
+
 }
 
 void MenuScreenView::setupScreen()
@@ -49,22 +49,18 @@ void MenuScreenView::hideUnusedTiles(int nTilesUsed) {
 
     if (nTilesUsed < 5) {
         menuTile4.setVisible(false);
-        menuTile3.setDividerVisible(false);
     }
 
     if (nTilesUsed < 4) {
         menuTile3.setVisible(false);
-        menuTile2.setDividerVisible(false);
     }
 
     if (nTilesUsed < 3) {
         menuTile2.setVisible(false);
-        menuTile1.setDividerVisible(false);
     }
 
     if (nTilesUsed < 2) {
         menuTile1.setVisible(false);
-        menuTile0.setDividerVisible(false);
     }
 
     if (nTilesUsed < 1) {
@@ -74,17 +70,8 @@ void MenuScreenView::hideUnusedTiles(int nTilesUsed) {
 
 void MenuScreenView::reset() {
     menuTile0.setVisible(true);
-    menuTile0.setDividerVisible(true);
-
     menuTile1.setVisible(true);
-    menuTile1.setDividerVisible(true);
-
     menuTile2.setVisible(true);
-    menuTile2.setDividerVisible(true);
-
     menuTile3.setVisible(true);
-    menuTile3.setDividerVisible(true);
-
     menuTile4.setVisible(true);
-    menuTile4.setDividerVisible(false);
 }

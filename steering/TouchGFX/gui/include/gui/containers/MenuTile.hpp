@@ -12,7 +12,6 @@ public:
     virtual void initialize();
 
     void setText(const char *text);
-    void setDividerVisible(bool visible);
     void setSelected(bool selected);
 protected:
 };

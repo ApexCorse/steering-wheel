@@ -17,11 +17,6 @@ void MenuTile::setText(const char *text)
     tileName.invalidate();
 }
 
-void MenuTile::setDividerVisible(bool visible)
-{
-    divider.setVisible(visible);
-}
-
 void MenuTile::setSelected(bool selected)
 {
     if (selected) {
