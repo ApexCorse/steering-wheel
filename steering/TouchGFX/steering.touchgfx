@@ -154,7 +154,6 @@
       },
       {
         "Name": "MenuScreen",
-        "CanvasBufferSize": 12000,
         "Components": [
           {
             "Type": "CustomContainerInstance",
@@ -394,13 +393,13 @@
             "Type": "Box",
             "Name": "background",
             "Width": 800,
-            "Height": 77
+            "Height": 85
           },
           {
             "Type": "TextArea",
             "Name": "tileName",
             "Width": 800,
-            "Height": 77,
+            "Height": 85,
             "TextId": "__SingleUse_0VQS",
             "TextRotation": "0",
             "Color": {
@@ -413,24 +412,6 @@
               "UseBuffer": true,
               "BufferSize": 17
             }
-          },
-          {
-            "Type": "Line",
-            "Name": "divider",
-            "Y": 77,
-            "Width": 800,
-            "Height": 16,
-            "Color": {
-              "Red": 92,
-              "Green": 92,
-              "Blue": 92
-            },
-            "StartX": 20.0,
-            "StartY": 5.0,
-            "EndX": 780.0,
-            "EndY": 5.0,
-            "LineWidth": 2.0,
-            "LineEndingStyle": "Round"
           }
         ],
         "Interactions": []
