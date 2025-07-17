@@ -22,6 +22,8 @@ public:
     virtual void setBatteryPower(int batteryPower, int minBatteryPower, int maxBatteryPower) {}
 
     virtual void setMenuItems(char* menuItems[], int nMenuItems) {}
+    virtual void setModules(Module *modules[], uint8_t nModules) {}
+    virtual void setSectionTitle(char const *name) {}
 
     virtual void handleButtonDown() {}
     virtual void handleButtonUp() {}

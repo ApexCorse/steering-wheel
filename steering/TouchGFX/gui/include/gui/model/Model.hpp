@@ -17,6 +17,10 @@ public:
 
     void tick();
     void initMenuItems();
+    void initSectionMenu();
+    void initSectionTitle();
+
+    void setChosenModule(char const *name);
 protected:
     ModelListener* modelListener;
     int speed;

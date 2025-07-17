@@ -27,10 +27,29 @@ public:
 
     virtual ~SectionScreenPresenter() {}
 
+    static const uint8_t MAX_MODULES = 16;
+    void setModules(Module *modules[], uint8_t nModules) override;
+    void setSectionTitle(char const *name) override;
+    void handleButtonDown() override;
+    void handleButtonUp() override;
+    void handleButtonConfirm() override;
+    void handleButtonBack() override;
 private:
     SectionScreenPresenter();
 
     SectionScreenView& view;
+
+    void adaptIndexes();
+    void updateModuleTilesInView();
+    void setSelected();
+
+    uint8_t currentIndex;
+    uint8_t firstTileIndex;
+    uint8_t lastTileIndex;
+
+    const uint8_t NUM_TILES_TO_SHOW = 5;
+    uint8_t nModules;
+    Module *modules[MAX_MODULES];
 };
 
 #endif // SECTIONSCREENPRESENTER_HPP
