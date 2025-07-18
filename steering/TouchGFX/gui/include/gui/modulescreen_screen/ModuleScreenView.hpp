@@ -11,7 +11,13 @@ public:
     virtual ~ModuleScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-protected:
+
+    void setMeasurements(Measurement *measurements[], uint8_t nMeasurements);
+    void setSelected(uint8_t index);
+    void setTitle(char const *name);
+private:
+    void hideUnusedTiles(uint8_t nTilesUsed);
+    void reset();
 };
 
 #endif // MODULESCREENVIEW_HPP

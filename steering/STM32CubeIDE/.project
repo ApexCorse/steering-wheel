@@ -360,6 +360,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/GeneralMeasurement.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/MeasurementTile.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/MeasurementTile.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/ModuleTile.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/ModuleTile.cpp</locationURI>
@@ -455,6 +460,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_Orbitron_VariableFont_wght_32_4bpp_0.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Font_Orbitron_VariableFont_wght_48_4bpp_0.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_Orbitron_VariableFont_wght_48_4bpp_0.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/Font_Orbitron_VariableFont_wght_64_4bpp_0.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_Orbitron_VariableFont_wght_64_4bpp_0.cpp</locationURI>
@@ -485,6 +495,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_Orbitron_VariableFont_wght_32_4bpp.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Kerning_Orbitron_VariableFont_wght_48_4bpp.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_Orbitron_VariableFont_wght_48_4bpp.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/Kerning_Orbitron_VariableFont_wght_64_4bpp.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_Orbitron_VariableFont_wght_64_4bpp.cpp</locationURI>
@@ -508,6 +523,11 @@
 			<name>Application/User/generated/Table_Orbitron_VariableFont_wght_32_4bpp.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_Orbitron_VariableFont_wght_32_4bpp.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Table_Orbitron_VariableFont_wght_48_4bpp.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_Orbitron_VariableFont_wght_48_4bpp.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/Table_Orbitron_VariableFont_wght_64_4bpp.cpp</name>
@@ -538,6 +558,11 @@
 			<name>Application/User/generated/GeneralMeasurementBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/GeneralMeasurementBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/MeasurementTileBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/MeasurementTileBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/ModuleTileBase.cpp</name>

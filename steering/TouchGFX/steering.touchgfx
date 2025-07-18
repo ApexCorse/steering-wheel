@@ -377,7 +377,58 @@
       },
       {
         "Name": "ModuleScreen",
-        "Components": [],
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "measurementTile3",
+            "Y": 385,
+            "Width": 800,
+            "Height": 95,
+            "CustomContainerDefinitionName": "MeasurementTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "measurementTile2",
+            "Y": 290,
+            "Width": 800,
+            "Height": 95,
+            "CustomContainerDefinitionName": "MeasurementTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "measurementTile1",
+            "Y": 195,
+            "Width": 800,
+            "Height": 95,
+            "CustomContainerDefinitionName": "MeasurementTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "measurementTile0",
+            "Y": 100,
+            "Width": 800,
+            "Height": 95,
+            "CustomContainerDefinitionName": "MeasurementTile"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "moduleName",
+            "Width": 800,
+            "Height": 70,
+            "TextId": "__SingleUse_END8",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_5YFU",
+              "UseBuffer": true,
+              "BufferSize": 16
+            }
+          }
+        ],
         "Interactions": []
       }
     ],
