@@ -19,6 +19,8 @@ public:
     void initSections();
     void initSectionMenu();
     void initSectionTitle();
+    void initModuleMenu();
+    void initModuleTitle();
 
     void setChosenSection(char const *name);
     void setChosenModule(char const *name);

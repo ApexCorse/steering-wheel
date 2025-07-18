@@ -26,11 +26,28 @@ public:
     virtual void deactivate();
 
     virtual ~ModuleScreenPresenter() {}
-
+    static const uint8_t MAX_MEASUREMENTS = 16;
+    void setMeasurements(Measurement *measurements[], uint8_t nMeasurements);
+    void setModuleTitle(char const *name) override;
+    void handleButtonDown() override;
+    void handleButtonUp() override;
+    void handleButtonBack() override;
 private:
     ModuleScreenPresenter();
 
     ModuleScreenView& view;
+
+    void adaptIndexes();
+    void updateMeasurementTilesInView();
+    void setSelected();
+
+    uint8_t currentIndex;
+    uint8_t firstTileIndex;
+    uint8_t lastTileIndex;
+
+    const uint8_t NUM_TILES_TO_SHOW = 4;
+    uint8_t nMeasurements;
+    Measurement *measurements[MAX_MEASUREMENTS];
 };
 
 #endif // MODULESCREENPRESENTER_HPP

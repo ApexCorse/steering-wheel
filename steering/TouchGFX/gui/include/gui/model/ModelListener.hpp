@@ -23,7 +23,9 @@ public:
 
     virtual void setSections(Section *sections[], uint8_t nSections) {}
     virtual void setModules(Module *modules[], uint8_t nModules) {}
+    virtual void setMeasurements(Measurement *measurements[], uint8_t nMeasurements) {}
     virtual void setSectionTitle(char const *name) {}
+    virtual void setModuleTitle(char const *name) {}
 
     virtual void handleButtonDown() {}
     virtual void handleButtonUp() {}
