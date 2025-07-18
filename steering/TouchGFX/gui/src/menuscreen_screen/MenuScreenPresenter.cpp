@@ -63,7 +63,7 @@ void MenuScreenPresenter::handleButtonUp()
     if (!nSections) return;
 
     currentIndex = static_cast<uint8_t>(
-        std::min(
+        std::max(
             static_cast<int>(currentIndex) - 1,
             0
         )

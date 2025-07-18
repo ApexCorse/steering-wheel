@@ -379,38 +379,6 @@
         "Name": "ModuleScreen",
         "Components": [
           {
-            "Type": "CustomContainerInstance",
-            "Name": "measurementTile3",
-            "Y": 385,
-            "Width": 800,
-            "Height": 95,
-            "CustomContainerDefinitionName": "MeasurementTile"
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "measurementTile2",
-            "Y": 290,
-            "Width": 800,
-            "Height": 95,
-            "CustomContainerDefinitionName": "MeasurementTile"
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "measurementTile1",
-            "Y": 195,
-            "Width": 800,
-            "Height": 95,
-            "CustomContainerDefinitionName": "MeasurementTile"
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "measurementTile0",
-            "Y": 100,
-            "Width": 800,
-            "Height": 95,
-            "CustomContainerDefinitionName": "MeasurementTile"
-          },
-          {
             "Type": "TextArea",
             "Name": "moduleName",
             "Width": 800,
@@ -427,6 +395,91 @@
               "UseBuffer": true,
               "BufferSize": 16
             }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "measurementTile9",
+            "X": 400,
+            "Y": 400,
+            "Width": 400,
+            "Height": 80,
+            "CustomContainerDefinitionName": "MeasurementTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "measurementTile8",
+            "Y": 400,
+            "Width": 400,
+            "Height": 80,
+            "CustomContainerDefinitionName": "MeasurementTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "measurementTile7",
+            "X": 400,
+            "Y": 320,
+            "Width": 400,
+            "Height": 80,
+            "CustomContainerDefinitionName": "MeasurementTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "measurementTile6",
+            "Y": 320,
+            "Width": 400,
+            "Height": 80,
+            "CustomContainerDefinitionName": "MeasurementTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "measurementTile5",
+            "X": 400,
+            "Y": 240,
+            "Width": 400,
+            "Height": 80,
+            "CustomContainerDefinitionName": "MeasurementTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "measurementTile4",
+            "Y": 240,
+            "Width": 400,
+            "Height": 80,
+            "CustomContainerDefinitionName": "MeasurementTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "measurementTile3",
+            "X": 400,
+            "Y": 160,
+            "Width": 400,
+            "Height": 80,
+            "CustomContainerDefinitionName": "MeasurementTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "measurementTile2",
+            "Y": 160,
+            "Width": 400,
+            "Height": 80,
+            "CustomContainerDefinitionName": "MeasurementTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "measurementTile1",
+            "X": 400,
+            "Y": 80,
+            "Width": 400,
+            "Height": 80,
+            "CustomContainerDefinitionName": "MeasurementTile"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "measurementTile0",
+            "Y": 80,
+            "Width": 400,
+            "Height": 80,
+            "CustomContainerDefinitionName": "MeasurementTile"
           }
         ],
         "Interactions": []
@@ -543,6 +596,59 @@
               "TextId": "__SingleUse_SRCR",
               "UseBuffer": true,
               "BufferSize": 6
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "MeasurementTile",
+        "X": 40,
+        "Y": 365,
+        "Width": 400,
+        "Height": 80,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 400,
+            "Height": 80
+          },
+          {
+            "Type": "TextArea",
+            "Name": "label",
+            "Width": 200,
+            "Height": 80,
+            "TextId": "__SingleUse_YNQT",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 168,
+              "Green": 168,
+              "Blue": 168
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_81LL",
+              "UseBuffer": true,
+              "BufferSize": 16
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "value",
+            "X": 200,
+            "Width": 200,
+            "Height": 80,
+            "TextId": "__SingleUse_PF5V",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_SUIB",
+              "UseBuffer": true,
+              "BufferSize": 16
             }
           }
         ],

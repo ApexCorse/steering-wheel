@@ -26,7 +26,7 @@ public:
     virtual void deactivate();
 
     virtual ~ModuleScreenPresenter() {}
-    static const uint8_t MAX_MEASUREMENTS = 16;
+    static const uint8_t MAX_MEASUREMENTS = 64;
     void setMeasurements(Measurement *measurements[], uint8_t nMeasurements);
     void setModuleTitle(char const *name) override;
     void handleButtonDown() override;
@@ -45,7 +45,7 @@ private:
     uint8_t firstTileIndex;
     uint8_t lastTileIndex;
 
-    const uint8_t NUM_TILES_TO_SHOW = 4;
+    const uint8_t NUM_TILES_TO_SHOW = 10;
     uint8_t nMeasurements;
     Measurement *measurements[MAX_MEASUREMENTS];
 };
