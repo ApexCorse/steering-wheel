@@ -3,7 +3,7 @@
 
 #include <JsonBase.hpp>
 
-typedef enum Type { INT = 0, DOUBLE } Type;
+typedef enum MeasurementType { INT = 0, DOUBLE } MeasurementType;
 
 class Measurement : public JsonBase {
 public:
@@ -13,10 +13,10 @@ public:
   Measurement *next;
   void setValue(double newValue);
   double getValue();
-  Type getType();
+  MeasurementType getType();
 private:
   double value;
-  Type type;
+  MeasurementType type;
 
   bool hasMinValue;
   bool hasMaxValue;
