@@ -53,7 +53,7 @@ void ModuleScreenPresenter::handleButtonDown()
 
     currentIndex = static_cast<uint8_t>(
         std::min(
-            static_cast<int>(currentIndex) + 1,
+            static_cast<int>(currentIndex) + 2,
             static_cast<int>(nMeasurements) - 1
         )
     );
@@ -68,8 +68,8 @@ void ModuleScreenPresenter::handleButtonUp()
     if (!nMeasurements) return;
 
     currentIndex = static_cast<uint8_t>(
-        std::min(
-            static_cast<int>(currentIndex) - 1,
+        std::max(
+            static_cast<int>(currentIndex) - 2,
             0
         )
     );

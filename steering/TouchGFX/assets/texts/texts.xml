@@ -31,6 +31,18 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_SUIB" Alignment="Left" TypographyId="Primary_Medium">
+        <Translation Language="GB">Value</Translation>
+      </Text>
+      <Text Id="__SingleUse_PF5V" Alignment="Right" TypographyId="Primary_Medium">
+        <Translation Language="GB">&lt;value&gt; </Translation>
+      </Text>
+      <Text Id="__SingleUse_81LL" Alignment="Left" TypographyId="Primary_Medium">
+        <Translation Language="GB">Label</Translation>
+      </Text>
+      <Text Id="__SingleUse_YNQT" Alignment="Left" TypographyId="Primary_Medium">
+        <Translation Language="GB"> &lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_MGII" Alignment="Left" TypographyId="Primary_Big">
         <Translation Language="GB">Value</Translation>
       </Text>
