@@ -2,7 +2,7 @@
 
 Measurement::Measurement() {}
 
-Measurement::Measurement(json_t const *json) : JsonBase(json), hasMinValue(false), hasMaxValue(false) 
+Measurement::Measurement(json_t const *json) : JsonBase(json), value(0), hasMinValue(false), hasMaxValue(false) 
 {
   json_t const *minValue = getPropertyOfType("minValue", JSON_BOOLEAN);
   if (minValue) {
@@ -18,7 +18,7 @@ Measurement::Measurement(json_t const *json) : JsonBase(json), hasMinValue(false
 
   json_t const *type = getPropertyOfType("type", JSON_INTEGER);
   if (type) {
-    this->type = (Type)json_getInteger(type);
+    this->type = (MeasurementType)json_getInteger(type);
   }
 }
 
@@ -31,7 +31,7 @@ double Measurement::getValue()
   return value;
 }
 
-Type Measurement::getType()
+MeasurementType Measurement::getType()
 {
   return type;
 }
