@@ -20,6 +20,7 @@ public:
     void initSectionMenu();
     void initSectionTitle();
 
+    void setChosenSection(char const *name);
     void setChosenModule(char const *name);
 protected:
     ModelListener* modelListener;

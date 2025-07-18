@@ -85,6 +85,7 @@ void MenuScreenPresenter::handleButtonConfirm()
     } else if (strcmp(sections[currentIndex]->getName(), "Start Up") == 0) {
         view.gotoStartUpScreen();
     } else {
+        model->setChosenSection(sections[currentIndex]->getName());
         view.gotoSectionScreen();
     }
 }

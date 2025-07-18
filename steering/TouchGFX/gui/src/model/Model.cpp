@@ -62,6 +62,11 @@ void Model::initSectionTitle()
   modelListener->setSectionTitle(chosenSection);
 }
 
+void Model::setChosenSection(char const *name)
+{
+  strcpy(chosenSection, name);
+}
+
 void Model::setChosenModule(char const *name)
 {
   strcpy(chosenModule, name);
