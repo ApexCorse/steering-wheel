@@ -4,7 +4,7 @@
 #include <algorithm>
 
 SectionScreenPresenter::SectionScreenPresenter(SectionScreenView& v)
-    : view(v)
+    : ListManager(5), view(v)
 {
 
 }
@@ -22,24 +22,7 @@ void SectionScreenPresenter::deactivate()
 
 void SectionScreenPresenter::setModules(Module *modules[], uint8_t nModules)
 {
-    this->nModules = nModules;
-
-    for (uint8_t i = 0; i < nModules; ++i) {
-        this->modules[i] = modules[i];
-    }
-
-    currentIndex = static_cast<uint8_t>(0);
-    firstTileIndex = static_cast<uint8_t>(0);
-
-    lastTileIndex = static_cast<uint8_t>(
-        std::min(
-            static_cast<int>(nModules) - 1,
-            static_cast<int>(NUM_TILES_TO_SHOW) - 1
-        )
-    );
-
-    updateModuleTilesInView();
-    setSelected();
+    ListManager<Module>::setItems(modules, nModules);
 }
 
 void SectionScreenPresenter::setSectionTitle(char const *name)
@@ -49,41 +32,21 @@ void SectionScreenPresenter::setSectionTitle(char const *name)
 
 void SectionScreenPresenter::handleButtonDown()
 {
-    if (!nModules) return;
-
-    currentIndex = static_cast<uint8_t>(
-        std::min(
-            static_cast<int>(currentIndex) + 1,
-            static_cast<int>(nModules) - 1
-        )
-    );
-    adaptIndexes();
-    updateModuleTilesInView();
-    setSelected();
+    ListManager<Module>::handleButtonUp();
 }
 
 void SectionScreenPresenter::handleButtonUp()
 {
-    if (!nModules) return;
-
-    currentIndex = static_cast<uint8_t>(
-        std::max(
-            static_cast<int>(currentIndex) - 1,
-            0
-        )
-    );
-    adaptIndexes();
-    updateModuleTilesInView();
-    setSelected();
+    ListManager<Module>::handleButtonUp();
 }
 
 void SectionScreenPresenter::handleButtonConfirm()
 {
-    if (currentIndex < static_cast<uint8_t>(0) || currentIndex >= nModules) return;
+    if (currentIndex < static_cast<uint8_t>(0) || currentIndex >= nItems) return;
 
-    if (modules[currentIndex] == nullptr) return;
+    if (items[currentIndex] == nullptr) return;
 
-    model->setChosenModule(modules[currentIndex]->getName());
+    model->setChosenModule(items[currentIndex]->getName());
     view.gotoModuleScreen();
 }
 
@@ -92,69 +55,12 @@ void SectionScreenPresenter::handleButtonBack()
     
 }
 
-void SectionScreenPresenter::adaptIndexes()
+void SectionScreenPresenter::updateItemTilesInView(Module *items[], uint8_t nItems)
 {
-    if (!nModules) {
-        firstTileIndex = static_cast<uint8_t>(0);
-        lastTileIndex = static_cast<uint8_t>(0);
-        return;
-    }
-
-    if (currentIndex < firstTileIndex) {
-        firstTileIndex = currentIndex;
-        lastTileIndex = static_cast<uint8_t>(
-            static_cast<int>(firstTileIndex) + static_cast<int>(NUM_TILES_TO_SHOW) - 1
-        );
-    } else if (currentIndex > lastTileIndex) {
-        firstTileIndex = static_cast<uint8_t>(
-            static_cast<int>(currentIndex) - (static_cast<int>(NUM_TILES_TO_SHOW) - 1)
-        );
-        lastTileIndex = currentIndex;
-    }
-
-    if (lastTileIndex >= nModules) {
-        lastTileIndex = static_cast<uint8_t>(nModules - 1);
-        firstTileIndex = static_cast<uint8_t>(
-            std::max(
-                0,
-                static_cast<int>(lastTileIndex) - (static_cast<int>(NUM_TILES_TO_SHOW) - 1)
-            )
-        );
-    }
-    if (firstTileIndex < static_cast<uint8_t>(0)) {
-        firstTileIndex = static_cast<uint8_t>(0);
-        lastTileIndex = static_cast<uint8_t>(
-            std::min(
-                static_cast<int>(nModules) - 1,
-                static_cast<int>(NUM_TILES_TO_SHOW) - 1
-            )
-        );
-    }
-}
-
-void SectionScreenPresenter::updateModuleTilesInView()
-{
-    uint8_t actualFirst = static_cast<uint8_t>(
-        std::max(0, static_cast<int>(firstTileIndex))
-    );
-    uint8_t actualLast = static_cast<uint8_t>(
-        std::min(
-            static_cast<int>(nModules) - 1,
-            static_cast<int>(lastTileIndex)
-        )
-    );
-
-    Module *arrayToPass[static_cast<size_t>(actualLast - actualFirst + 1)];
-    if (actualFirst <= actualLast && nModules > 0) {
-        for (uint8_t i = actualFirst; i <= actualLast; ++i) {
-            arrayToPass[i - actualFirst] = modules[i];
-        }
-    }
-
-    view.setModules(arrayToPass, static_cast<uint8_t>(actualLast - actualFirst + 1));
+    view.setModules(items, nItems);
 }
 
 void SectionScreenPresenter::setSelected()
 {
-    view.setSelected(static_cast<uint8_t>(currentIndex - firstTileIndex));
+    view.setSelected(currentIndex - firstTileIndex);
 }
