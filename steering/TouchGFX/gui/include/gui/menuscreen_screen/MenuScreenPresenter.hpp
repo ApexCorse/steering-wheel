@@ -3,12 +3,13 @@
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
+#include <gui/common/ListManager.hpp>
 
 using namespace touchgfx;
 
 class MenuScreenView;
 
-class MenuScreenPresenter : public touchgfx::Presenter, public ModelListener
+class MenuScreenPresenter : public touchgfx::Presenter, public ModelListener, public ListManager<Section>
 {
 public:
     MenuScreenPresenter(MenuScreenView& v);
@@ -32,24 +33,13 @@ public:
     void handleButtonUp() override;
     void handleButtonConfirm() override;
     void handleButtonBack() override;
-
-    static const uint8_t MAX_SECTIONS = 16;
 private:
     MenuScreenPresenter();
     
     MenuScreenView& view;
 
-    void adaptIndexes();
-    void updateSectionTilesInView();
-    void setSelected();
-
-    int currentIndex;
-    int firstTileIndex;
-    int lastTileIndex;
-
-    const uint8_t NUM_TILES_TO_SHOW = 5;
-    uint8_t nSections;
-    Section *sections[MAX_SECTIONS];
+    void updateItemTilesInView(Section *items[], uint8_t nItems) override;
+    void setSelected() override;
 };
 
 #endif // MENUSCREENPRESENTER_HPP

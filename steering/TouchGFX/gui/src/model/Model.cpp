@@ -14,13 +14,13 @@ Model::Model() : modelListener(0), configuration(nullptr), chosenSection(""), ch
 
 void Model::initSections()
 {
-  Section *sections[SectionScreenPresenter::MAX_MODULES];
+  Section *sections[MenuScreenPresenter::MAX_ITEMS];
   uint8_t nSections = configuration->getNSections();
 
   Section *current = configuration->getFirstSection();
   uint8_t i = 0;
 
-  while (current && nSections < MenuScreenPresenter::MAX_SECTIONS) {
+  while (current && nSections < MenuScreenPresenter::MAX_ITEMS) {
     sections[i] = current;
 
     i++;
@@ -32,7 +32,7 @@ void Model::initSections()
 
 void Model::initSectionMenu()
 {  
-  Module *modules[SectionScreenPresenter::MAX_MODULES];
+  Module *modules[SectionScreenPresenter::MAX_ITEMS];
   uint8_t nModules = 0;
 
   Section *section = configuration->getSectionByName(chosenSection);
@@ -45,7 +45,7 @@ void Model::initSectionMenu()
   nModules = section->getNModules();
   uint8_t i = 0;
 
-  while (current && nModules < SectionScreenPresenter::MAX_MODULES) {
+  while (current && nModules < SectionScreenPresenter::MAX_ITEMS) {
     modules[i] = current;
 
     i++;
@@ -66,7 +66,7 @@ void Model::initSectionTitle()
 
 void Model::initModuleMenu()
 {  
-  Measurement *measurements[ModuleScreenPresenter::MAX_MEASUREMENTS];
+  Measurement *measurements[ModuleScreenPresenter::MAX_ITEMS];
   uint8_t nMeasurements = 0;
 
   Section *section = configuration->getSectionByName(chosenSection);
@@ -85,7 +85,7 @@ void Model::initModuleMenu()
   nMeasurements = module_->getNMeasurements();
   uint8_t i = 0;
 
-  while (current && nMeasurements < ModuleScreenPresenter::MAX_MEASUREMENTS) {
+  while (current && nMeasurements < ModuleScreenPresenter::MAX_ITEMS) {
     measurements[i] = current;
 
     i++;
