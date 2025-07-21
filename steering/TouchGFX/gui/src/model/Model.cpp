@@ -7,8 +7,13 @@
 #include <cstring>
 #include <main.h>
 
-Model::Model() : modelListener(0), configuration(nullptr), chosenSection(""), chosenModule("")
+Model::Model() : modelListener(0), configuration(nullptr) 
 {
+  strcpy(chosenSection, "");
+  strcpy(chosenModule, "");
+  strcpy(currentScreen, "");
+  strcpy(previousScreen, "Drive");
+
   configuration = new Configuration();
 }
 

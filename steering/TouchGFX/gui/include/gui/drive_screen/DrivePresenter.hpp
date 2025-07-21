@@ -33,6 +33,9 @@ public:
     void setBatteryLevel(int batteryLevel, int minBatteryLevel, int maxBatteryLevel) override;
     void setBatteryPower(int batteryPower, int minBatteryPower, int maxBatteryPower) override;
 
+    void handleButtonConfirm() override;
+    void handleButtonBack() override;
+
 private:
     DrivePresenter();
 

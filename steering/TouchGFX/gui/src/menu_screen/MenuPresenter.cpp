@@ -13,11 +13,12 @@ MenuPresenter::MenuPresenter(MenuView& v)
 void MenuPresenter::activate()
 {
     model->initSections();
+    strcpy(model->currentScreen, "Menu");
 }
 
 void MenuPresenter::deactivate()
 {
-
+    strcpy(model->previousScreen, "Menu");
 }
 
 void MenuPresenter::setSections(Section *sections[], uint8_t nSections)
@@ -27,16 +28,22 @@ void MenuPresenter::setSections(Section *sections[], uint8_t nSections)
 
 void MenuPresenter::handleButtonDown()
 {
+    if (strcmp(model->currentScreen, "Menu") != 0) return;
+
     ListManager<Section>::handleButtonDown();
 }
 
 void MenuPresenter::handleButtonUp()
 {
+    if (strcmp(model->currentScreen, "Menu") != 0) return;
+
     ListManager<Section>::handleButtonUp();
 }
 
 void MenuPresenter::handleButtonConfirm()
 {
+    if (strcmp(model->currentScreen, "Menu") != 0) return;
+
     if (currentIndex < static_cast<uint8_t>(0) || currentIndex >= nItems) return;
 
     if (items[currentIndex] == nullptr) return;
@@ -53,7 +60,13 @@ void MenuPresenter::handleButtonConfirm()
 
 void MenuPresenter::handleButtonBack()
 {
-    
+    if (strcmp(model->currentScreen, "Menu") != 0) return;
+
+    if (strcmp(model->previousScreen, "Drive") == 0) {
+        view.gotoDriveScreen();
+    } else if (strcmp(model->previousScreen, "Section") == 0) {
+        view.gotoSectionScreen();
+    }
 }
 
 void MenuPresenter::updateItemTilesInView(Section *items[], uint8_t nItems)
