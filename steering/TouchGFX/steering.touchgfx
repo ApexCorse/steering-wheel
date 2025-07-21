@@ -150,7 +150,25 @@
             }
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Drive gotoMenuScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Menu"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "gotoMenuScreen"
+          }
+        ]
       },
       {
         "Name": "Menu",
@@ -482,7 +500,25 @@
             "CustomContainerDefinitionName": "MeasurementTile"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Module gotoSectionScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Section"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "gotoSectionScreen"
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [

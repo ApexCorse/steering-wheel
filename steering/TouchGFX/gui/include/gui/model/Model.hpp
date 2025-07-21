@@ -24,6 +24,9 @@ public:
 
     void setChosenSection(char const *name);
     void setChosenModule(char const *name);
+
+    char currentScreen[16];
+    char previousScreen[16];
 protected:
     ModelListener* modelListener;
     int speed;

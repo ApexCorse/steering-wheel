@@ -1,6 +1,8 @@
 #include <gui/drive_screen/DriveView.hpp>
 #include <gui/drive_screen/DrivePresenter.hpp>
 
+#include <cstring>
+
 DrivePresenter::DrivePresenter(DriveView& v)
     : view(v)
 {
@@ -9,12 +11,24 @@ DrivePresenter::DrivePresenter(DriveView& v)
 
 void DrivePresenter::activate()
 {
-
+    strcpy(model->currentScreen, "Drive");
 }
 
 void DrivePresenter::deactivate()
 {
+    strcpy(model->previousScreen, "Drive");
+}
 
+void DrivePresenter::handleButtonConfirm()
+{
+   if (strcmp(model->currentScreen, "Drive") != 0) return;
+}
+
+void DrivePresenter::handleButtonBack()
+{
+   if (strcmp(model->currentScreen, "Drive") != 0) return;
+
+   view.gotoMenuScreen();
 }
 
 void DrivePresenter::setSpeed(int speed)
