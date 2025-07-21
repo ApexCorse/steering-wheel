@@ -1,17 +1,17 @@
-#ifndef DRIVESCREENPRESENTER_HPP
-#define DRIVESCREENPRESENTER_HPP
+#ifndef DRIVEPRESENTER_HPP
+#define DRIVEPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class DriveScreenView;
+class DriveView;
 
-class DriveScreenPresenter : public touchgfx::Presenter, public ModelListener
+class DrivePresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    DriveScreenPresenter(DriveScreenView& v);
+    DrivePresenter(DriveView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,7 +25,7 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~DriveScreenPresenter() {}
+    virtual ~DrivePresenter() {}
     
     void setSpeed(int speed) override;
     void setMaxTemp(int maxTemp) override;
@@ -34,9 +34,9 @@ public:
     void setBatteryPower(int batteryPower, int minBatteryPower, int maxBatteryPower) override;
 
 private:
-    DriveScreenPresenter();
+    DrivePresenter();
 
-    DriveScreenView& view;
+    DriveView& view;
 };
 
-#endif // DRIVESCREENPRESENTER_HPP
+#endif // DRIVEPRESENTER_HPP

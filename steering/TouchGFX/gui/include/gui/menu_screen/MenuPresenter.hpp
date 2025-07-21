@@ -1,5 +1,5 @@
-#ifndef SECTIONSCREENPRESENTER_HPP
-#define SECTIONSCREENPRESENTER_HPP
+#ifndef MENUPRESENTER_HPP
+#define MENUPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
@@ -7,12 +7,12 @@
 
 using namespace touchgfx;
 
-class SectionScreenView;
+class MenuView;
 
-class SectionScreenPresenter : public touchgfx::Presenter, public ModelListener, public ListManager<Module>
+class MenuPresenter : public touchgfx::Presenter, public ModelListener, public ListManager<Section>
 {
 public:
-    SectionScreenPresenter(SectionScreenView& v);
+    MenuPresenter(MenuView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -26,21 +26,20 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~SectionScreenPresenter() {}
+    virtual ~MenuPresenter() {}
 
-    void setModules(Module *modules[], uint8_t nModules) override;
-    void setSectionTitle(char const *name) override;
+    void setSections(Section *sections[], uint8_t nSection) override;
     void handleButtonDown() override;
     void handleButtonUp() override;
     void handleButtonConfirm() override;
     void handleButtonBack() override;
 private:
-    SectionScreenPresenter();
+    MenuPresenter();
+    
+    MenuView& view;
 
-    SectionScreenView& view;
-
-    void updateItemTilesInView(Module *items[], uint8_t nItems) override;
+    void updateItemTilesInView(Section *items[], uint8_t nItems) override;
     void setSelected() override;
 };
 
-#endif // SECTIONSCREENPRESENTER_HPP
+#endif // MENUPRESENTER_HPP

@@ -1,41 +1,41 @@
-#include <gui/menuscreen_screen/MenuScreenView.hpp>
-#include <gui/menuscreen_screen/MenuScreenPresenter.hpp>
+#include <gui/menu_screen/MenuView.hpp>
+#include <gui/menu_screen/MenuPresenter.hpp>
 
 #include <algorithm>
 #include <cstring>
 
-MenuScreenPresenter::MenuScreenPresenter(MenuScreenView& v)
+MenuPresenter::MenuPresenter(MenuView& v)
     : ListManager(5), view(v)
 {
 
 }
 
-void MenuScreenPresenter::activate()
+void MenuPresenter::activate()
 {
     model->initSections();
 }
 
-void MenuScreenPresenter::deactivate()
+void MenuPresenter::deactivate()
 {
 
 }
 
-void MenuScreenPresenter::setSections(Section *sections[], uint8_t nSections)
+void MenuPresenter::setSections(Section *sections[], uint8_t nSections)
 {
     ListManager<Section>::setItems(sections, nSections);
 }
 
-void MenuScreenPresenter::handleButtonDown()
+void MenuPresenter::handleButtonDown()
 {
     ListManager<Section>::handleButtonDown();
 }
 
-void MenuScreenPresenter::handleButtonUp()
+void MenuPresenter::handleButtonUp()
 {
     ListManager<Section>::handleButtonUp();
 }
 
-void MenuScreenPresenter::handleButtonConfirm()
+void MenuPresenter::handleButtonConfirm()
 {
     if (currentIndex < static_cast<uint8_t>(0) || currentIndex >= nItems) return;
 
@@ -51,17 +51,17 @@ void MenuScreenPresenter::handleButtonConfirm()
     }
 }
 
-void MenuScreenPresenter::handleButtonBack()
+void MenuPresenter::handleButtonBack()
 {
     
 }
 
-void MenuScreenPresenter::updateItemTilesInView(Section *items[], uint8_t nItems)
+void MenuPresenter::updateItemTilesInView(Section *items[], uint8_t nItems)
 {
     view.setSections(items, nItems);
 }
 
-void MenuScreenPresenter::setSelected()
+void MenuPresenter::setSelected()
 {
     view.setSelected(currentIndex - firstTileIndex);
 }

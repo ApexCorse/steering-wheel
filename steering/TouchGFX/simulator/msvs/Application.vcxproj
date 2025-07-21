@@ -21,18 +21,6 @@
     <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp"/>
     <ClCompile Include="..\..\gui\src\model\Model.cpp"/>
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp"/>
-    <ClCompile Include="..\..\gui\src\drivescreen_screen\DriveScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\drivescreen_screen\DriveScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\drivescreen_screen\DriveScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\menuscreen_screen\MenuScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\menuscreen_screen\MenuScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\menuscreen_screen\MenuScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\modulescreen_screen\ModuleScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\modulescreen_screen\ModuleScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\modulescreen_screen\ModuleScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\sectionscreen_screen\SectionScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\sectionscreen_screen\SectionScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\sectionscreen_screen\SectionScreenViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\GeneralMeasurement.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\GeneralMeasurementBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\ModuleTile.cpp"/>
@@ -41,6 +29,18 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\SectionTileBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\MeasurementTile.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\MeasurementTileBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\drive_screen\DrivePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\drive_screen\DriveView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\drive_screen\DriveViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\menu_screen\MenuPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\menu_screen\MenuView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\menu_screen\MenuViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\module_screen\ModulePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\module_screen\ModuleView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\module_screen\ModuleViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\section_screen\SectionPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\section_screen\SectionView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\section_screen\SectionViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -191,18 +191,6 @@
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\drivescreen_screen\DriveScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\drivescreen_screen\DriveScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\drivescreen_screen\DriveScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\menuscreen_screen\MenuScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\menuscreen_screen\MenuScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\menuscreen_screen\MenuScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\modulescreen_screen\ModuleScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\modulescreen_screen\ModuleScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\modulescreen_screen\ModuleScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\sectionscreen_screen\SectionScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\sectionscreen_screen\SectionScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\sectionscreen_screen\SectionScreenViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\GeneralMeasurement.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\GeneralMeasurementBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\ModuleTile.hpp"/>
@@ -211,6 +199,19 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SectionTileBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\MeasurementTile.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\MeasurementTileBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\drive_screen\DrivePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\drive_screen\DriveView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\drive_screen\DriveViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\common\ListManager.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\menu_screen\MenuPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\menu_screen\MenuView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\menu_screen\MenuViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\module_screen\ModulePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\module_screen\ModuleView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\module_screen\ModuleViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\section_screen\SectionPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\section_screen\SectionView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\section_screen\SectionViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

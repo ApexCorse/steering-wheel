@@ -1,21 +1,21 @@
-#include <gui/menuscreen_screen/MenuScreenView.hpp>
+#include <gui/menu_screen/MenuView.hpp>
 
-MenuScreenView::MenuScreenView()
+MenuView::MenuView()
 {
 
 }
 
-void MenuScreenView::setupScreen()
+void MenuView::setupScreen()
 {
-    MenuScreenViewBase::setupScreen();
+    MenuViewBase::setupScreen();
 }
 
-void MenuScreenView::tearDownScreen()
+void MenuView::tearDownScreen()
 {
-    MenuScreenViewBase::tearDownScreen();
+    MenuViewBase::tearDownScreen();
 }
 
-void MenuScreenView::setSections(Section *sections[], uint8_t nSections)
+void MenuView::setSections(Section *sections[], uint8_t nSections)
 {
     reset();
     hideUnusedTiles(nSections);
@@ -35,7 +35,7 @@ void MenuScreenView::setSections(Section *sections[], uint8_t nSections)
     sectionTile4.setText(sections[4]->getName());
 }
 
-void MenuScreenView::setSelected(int index)
+void MenuView::setSelected(int index)
 {
     sectionTile0.setSelected(index == 0);
     sectionTile1.setSelected(index == 1);
@@ -44,7 +44,7 @@ void MenuScreenView::setSelected(int index)
     sectionTile4.setSelected(index == 4);
 }
 
-void MenuScreenView::hideUnusedTiles(int nTilesUsed) {
+void MenuView::hideUnusedTiles(int nTilesUsed) {
     if (nTilesUsed == 5) return;
 
     if (nTilesUsed < 5) {
@@ -68,7 +68,7 @@ void MenuScreenView::hideUnusedTiles(int nTilesUsed) {
     }
 }
 
-void MenuScreenView::reset() {
+void MenuView::reset() {
     sectionTile0.setVisible(true);
     sectionTile1.setVisible(true);
     sectionTile2.setVisible(true);

@@ -1,14 +1,14 @@
-#ifndef DRIVESCREENVIEW_HPP
-#define DRIVESCREENVIEW_HPP
+#ifndef DRIVEVIEW_HPP
+#define DRIVEVIEW_HPP
 
-#include <gui_generated/drivescreen_screen/DriveScreenViewBase.hpp>
-#include <gui/drivescreen_screen/DriveScreenPresenter.hpp>
+#include <gui_generated/drive_screen/DriveViewBase.hpp>
+#include <gui/drive_screen/DrivePresenter.hpp>
 
-class DriveScreenView : public DriveScreenViewBase
+class DriveView : public DriveViewBase
 {
 public:
-    DriveScreenView();
-    virtual ~DriveScreenView() {}
+    DriveView();
+    virtual ~DriveView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
 
@@ -22,4 +22,4 @@ public:
 protected:
 };
 
-#endif // DRIVESCREENVIEW_HPP
+#endif // DRIVEVIEW_HPP
