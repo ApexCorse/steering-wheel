@@ -31,10 +31,12 @@ void MeasurementTile::setSelected(bool selected)
 {
     if (selected) {
         background.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+        label.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
         return;
     }
 
     background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    label.setColor(touchgfx::Color::getColorFromRGB(168, 168, 168));
 }
 
 void MeasurementTile::setVisible(bool visible) 
