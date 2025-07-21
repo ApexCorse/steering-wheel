@@ -1,8 +1,8 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
-#include <gui/sectionscreen_screen/SectionScreenPresenter.hpp>
-#include <gui/menuscreen_screen/MenuScreenPresenter.hpp>
-#include <gui/modulescreen_screen/ModuleScreenPresenter.hpp>
+#include <gui/section_screen/SectionPresenter.hpp>
+#include <gui/menu_screen/MenuPresenter.hpp>
+#include <gui/module_screen/ModulePresenter.hpp>
 
 #include <cstring>
 #include <main.h>
@@ -14,13 +14,13 @@ Model::Model() : modelListener(0), configuration(nullptr), chosenSection(""), ch
 
 void Model::initSections()
 {
-  Section *sections[MenuScreenPresenter::MAX_ITEMS];
+  Section *sections[MenuPresenter::MAX_ITEMS];
   uint8_t nSections = configuration->getNSections();
 
   Section *current = configuration->getFirstSection();
   uint8_t i = 0;
 
-  while (current && nSections < MenuScreenPresenter::MAX_ITEMS) {
+  while (current && nSections < MenuPresenter::MAX_ITEMS) {
     sections[i] = current;
 
     i++;
@@ -32,7 +32,7 @@ void Model::initSections()
 
 void Model::initSectionMenu()
 {  
-  Module *modules[SectionScreenPresenter::MAX_ITEMS];
+  Module *modules[SectionPresenter::MAX_ITEMS];
   uint8_t nModules = 0;
 
   Section *section = configuration->getSectionByName(chosenSection);
@@ -45,7 +45,7 @@ void Model::initSectionMenu()
   nModules = section->getNModules();
   uint8_t i = 0;
 
-  while (current && nModules < SectionScreenPresenter::MAX_ITEMS) {
+  while (current && nModules < SectionPresenter::MAX_ITEMS) {
     modules[i] = current;
 
     i++;
@@ -66,7 +66,7 @@ void Model::initSectionTitle()
 
 void Model::initModuleMenu()
 {  
-  Measurement *measurements[ModuleScreenPresenter::MAX_ITEMS];
+  Measurement *measurements[ModulePresenter::MAX_ITEMS];
   uint8_t nMeasurements = 0;
 
   Section *section = configuration->getSectionByName(chosenSection);
@@ -85,7 +85,7 @@ void Model::initModuleMenu()
   nMeasurements = module_->getNMeasurements();
   uint8_t i = 0;
 
-  while (current && nMeasurements < ModuleScreenPresenter::MAX_ITEMS) {
+  while (current && nMeasurements < ModulePresenter::MAX_ITEMS) {
     measurements[i] = current;
 
     i++;

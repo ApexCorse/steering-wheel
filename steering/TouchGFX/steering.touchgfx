@@ -2,7 +2,7 @@
   "Application": {
     "Screens": [
       {
-        "Name": "DriveScreen",
+        "Name": "Drive",
         "Includes": "",
         "Components": [
           {
@@ -153,7 +153,7 @@
         "Interactions": []
       },
       {
-        "Name": "MenuScreen",
+        "Name": "Menu",
         "Components": [
           {
             "Type": "CustomContainerInstance",
@@ -216,24 +216,24 @@
             "HasCompletedTrigger": true,
             "Trigger": {
               "Type": "TriggerWhen",
-              "ActionCustomTypeName": "Call MenuScreen gotoDriveScreen"
+              "ActionCustomTypeName": "Call Menu gotoDriveScreen"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "DriveScreen"
+              "ActionComponent": "Drive"
             }
           },
           {
             "InteractionName": "Interaction2",
             "Trigger": {
               "Type": "TriggerWhen",
-              "ActionCustomTypeName": "Call MenuScreen gotoSectionScreen"
+              "ActionCustomTypeName": "Call Menu gotoSectionScreen"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "SectionScreen"
+              "ActionComponent": "Section"
             }
           }
         ],
@@ -250,7 +250,7 @@
         ]
       },
       {
-        "Name": "SectionScreen",
+        "Name": "Section",
         "Components": [
           {
             "Type": "TextArea",
@@ -344,12 +344,12 @@
             "HasCompletedTrigger": true,
             "Trigger": {
               "Type": "TriggerWhen",
-              "ActionCustomTypeName": "Call SectionScreen gotoMenuScreen"
+              "ActionCustomTypeName": "Call Section gotoMenuScreen"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "MenuScreen"
+              "ActionComponent": "Menu"
             }
           },
           {
@@ -357,12 +357,12 @@
             "HasCompletedTrigger": true,
             "Trigger": {
               "Type": "TriggerWhen",
-              "ActionCustomTypeName": "Call SectionScreen gotoModuleScreen"
+              "ActionCustomTypeName": "Call Section gotoModuleScreen"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "ModuleScreen"
+              "ActionComponent": "Module"
             }
           }
         ],
@@ -376,7 +376,7 @@
         ]
       },
       {
-        "Name": "ModuleScreen",
+        "Name": "Module",
         "Components": [
           {
             "Type": "TextArea",
@@ -661,7 +661,7 @@
       "Height": 800
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "MenuScreen",
+    "StartupScreenName": "Menu",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",

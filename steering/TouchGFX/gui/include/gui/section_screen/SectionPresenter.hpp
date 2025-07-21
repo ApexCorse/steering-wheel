@@ -1,5 +1,5 @@
-#ifndef MODULESCREENPRESENTER_HPP
-#define MODULESCREENPRESENTER_HPP
+#ifndef SECTIONPRESENTER_HPP
+#define SECTIONPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
@@ -7,12 +7,12 @@
 
 using namespace touchgfx;
 
-class ModuleScreenView;
+class SectionView;
 
-class ModuleScreenPresenter : public touchgfx::Presenter, public ModelListener, public ListManager<Measurement>
+class SectionPresenter : public touchgfx::Presenter, public ModelListener, public ListManager<Module>
 {
 public:
-    ModuleScreenPresenter(ModuleScreenView& v);
+    SectionPresenter(SectionView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -26,21 +26,21 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~ModuleScreenPresenter() {}
-    void setMeasurements(Measurement *measurements[], uint8_t nMeasurements) override;
-    void setModuleTitle(char const *name) override;
+    virtual ~SectionPresenter() {}
+
+    void setModules(Module *modules[], uint8_t nModules) override;
+    void setSectionTitle(char const *name) override;
     void handleButtonDown() override;
     void handleButtonUp() override;
+    void handleButtonConfirm() override;
     void handleButtonBack() override;
 private:
-    ModuleScreenPresenter();
+    SectionPresenter();
 
-    int scrollAmount() override { return 2; }
+    SectionView& view;
 
-    ModuleScreenView& view;
-
-    void updateItemTilesInView(Measurement *items[], uint8_t nItems) override;
-    void setSelected();
+    void updateItemTilesInView(Module *items[], uint8_t nItems) override;
+    void setSelected() override;
 };
 
-#endif // MODULESCREENPRESENTER_HPP
+#endif // SECTIONPRESENTER_HPP

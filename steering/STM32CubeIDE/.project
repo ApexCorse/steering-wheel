@@ -375,24 +375,24 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/SectionTile.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/DriveScreenPresenter.cpp</name>
+			<name>Application/User/gui/DrivePresenter.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/drivescreen_screen/DriveScreenPresenter.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/drive_screen/DrivePresenter.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/DriveScreenView.cpp</name>
+			<name>Application/User/gui/DriveView.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/drivescreen_screen/DriveScreenView.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/drive_screen/DriveView.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/MenuScreenPresenter.cpp</name>
+			<name>Application/User/gui/MenuPresenter.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/menuscreen_screen/MenuScreenPresenter.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/menu_screen/MenuPresenter.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/MenuScreenView.cpp</name>
+			<name>Application/User/gui/MenuView.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/menuscreen_screen/MenuScreenView.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/menu_screen/MenuView.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/Model.cpp</name>
@@ -400,24 +400,24 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/Model.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/ModuleScreenPresenter.cpp</name>
+			<name>Application/User/gui/ModulePresenter.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/modulescreen_screen/ModuleScreenPresenter.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/module_screen/ModulePresenter.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/ModuleScreenView.cpp</name>
+			<name>Application/User/gui/ModuleView.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/modulescreen_screen/ModuleScreenView.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/module_screen/ModuleView.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/SectionScreenPresenter.cpp</name>
+			<name>Application/User/gui/SectionPresenter.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/sectionscreen_screen/SectionScreenPresenter.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/section_screen/SectionPresenter.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/SectionScreenView.cpp</name>
+			<name>Application/User/gui/SectionView.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/sectionscreen_screen/SectionScreenView.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/section_screen/SectionView.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/ApplicationFontProvider.cpp</name>
@@ -575,24 +575,24 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/SectionTileBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/DriveScreenViewBase.cpp</name>
+			<name>Application/User/generated/DriveViewBase.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/drivescreen_screen/DriveScreenViewBase.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/drive_screen/DriveViewBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/MenuScreenViewBase.cpp</name>
+			<name>Application/User/generated/MenuViewBase.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/menuscreen_screen/MenuScreenViewBase.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/menu_screen/MenuViewBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/ModuleScreenViewBase.cpp</name>
+			<name>Application/User/generated/ModuleViewBase.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/modulescreen_screen/ModuleScreenViewBase.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/module_screen/ModuleViewBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/SectionScreenViewBase.cpp</name>
+			<name>Application/User/generated/SectionViewBase.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/sectionscreen_screen/SectionScreenViewBase.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/section_screen/SectionViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/BitmapDatabase.cpp</name>

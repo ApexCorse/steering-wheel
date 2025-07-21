@@ -1,5 +1,5 @@
-#ifndef MENUSCREENPRESENTER_HPP
-#define MENUSCREENPRESENTER_HPP
+#ifndef MODULEPRESENTER_HPP
+#define MODULEPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
@@ -7,12 +7,12 @@
 
 using namespace touchgfx;
 
-class MenuScreenView;
+class ModuleView;
 
-class MenuScreenPresenter : public touchgfx::Presenter, public ModelListener, public ListManager<Section>
+class ModulePresenter : public touchgfx::Presenter, public ModelListener, public ListManager<Measurement>
 {
 public:
-    MenuScreenPresenter(MenuScreenView& v);
+    ModulePresenter(ModuleView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -26,20 +26,21 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~MenuScreenPresenter() {}
-
-    void setSections(Section *sections[], uint8_t nSection) override;
+    virtual ~ModulePresenter() {}
+    void setMeasurements(Measurement *measurements[], uint8_t nMeasurements) override;
+    void setModuleTitle(char const *name) override;
     void handleButtonDown() override;
     void handleButtonUp() override;
-    void handleButtonConfirm() override;
     void handleButtonBack() override;
 private:
-    MenuScreenPresenter();
-    
-    MenuScreenView& view;
+    ModulePresenter();
 
-    void updateItemTilesInView(Section *items[], uint8_t nItems) override;
-    void setSelected() override;
+    int scrollAmount() override { return 2; }
+
+    ModuleView& view;
+
+    void updateItemTilesInView(Measurement *items[], uint8_t nItems) override;
+    void setSelected();
 };
 
-#endif // MENUSCREENPRESENTER_HPP
+#endif // MODULEPRESENTER_HPP

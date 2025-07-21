@@ -1,21 +1,21 @@
-#include <gui/sectionscreen_screen/SectionScreenView.hpp>
+#include <gui/section_screen/SectionView.hpp>
 
-SectionScreenView::SectionScreenView()
+SectionView::SectionView()
 {
 
 }
 
-void SectionScreenView::setupScreen()
+void SectionView::setupScreen()
 {
-    SectionScreenViewBase::setupScreen();
+    SectionViewBase::setupScreen();
 }
 
-void SectionScreenView::tearDownScreen()
+void SectionView::tearDownScreen()
 {
-    SectionScreenViewBase::tearDownScreen();
+    SectionViewBase::tearDownScreen();
 }
 
-void SectionScreenView::setModules(Module *modules[], uint8_t nModules)
+void SectionView::setModules(Module *modules[], uint8_t nModules)
 {
     reset();
     hideUnusedTiles(nModules);
@@ -36,7 +36,7 @@ void SectionScreenView::setModules(Module *modules[], uint8_t nModules)
     moduleTile4.setText(modules[4]->getName());
 }
 
-void SectionScreenView::setSelected(uint8_t index)
+void SectionView::setSelected(uint8_t index)
 {
     moduleTile0.setSelected(index == 0);
     moduleTile1.setSelected(index == 1);
@@ -45,13 +45,13 @@ void SectionScreenView::setSelected(uint8_t index)
     moduleTile4.setSelected(index == 4);
 }
 
-void SectionScreenView::setTitle(char const *name)
+void SectionView::setTitle(char const *name)
 {
     Unicode::strncpy(sectionNameBuffer, name, SECTIONNAME_SIZE);
     sectionName.invalidate();
 }
 
-void SectionScreenView::hideUnusedTiles(uint8_t nTilesUsed) 
+void SectionView::hideUnusedTiles(uint8_t nTilesUsed) 
 {
     if (nTilesUsed == 5) return;
 
@@ -76,7 +76,7 @@ void SectionScreenView::hideUnusedTiles(uint8_t nTilesUsed)
     }
 }
 
-void SectionScreenView::reset() 
+void SectionView::reset() 
 {
     moduleTile0.setVisible(true);
     moduleTile1.setVisible(true);

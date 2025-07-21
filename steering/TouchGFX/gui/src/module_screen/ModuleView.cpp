@@ -1,21 +1,21 @@
-#include <gui/modulescreen_screen/ModuleScreenView.hpp>
+#include <gui/module_screen/ModuleView.hpp>
 
-ModuleScreenView::ModuleScreenView()
+ModuleView::ModuleView()
 {
 
 }
 
-void ModuleScreenView::setupScreen()
+void ModuleView::setupScreen()
 {
-    ModuleScreenViewBase::setupScreen();
+    ModuleViewBase::setupScreen();
 }
 
-void ModuleScreenView::tearDownScreen()
+void ModuleView::tearDownScreen()
 {
-    ModuleScreenViewBase::tearDownScreen();
+    ModuleViewBase::tearDownScreen();
 }
 
-void ModuleScreenView::setMeasurements(Measurement *measurements[], uint8_t nMeasurements)
+void ModuleView::setMeasurements(Measurement *measurements[], uint8_t nMeasurements)
 {
     reset();
     hideUnusedTiles(nMeasurements);
@@ -61,7 +61,7 @@ void ModuleScreenView::setMeasurements(Measurement *measurements[], uint8_t nMea
     measurementTile9.setValue(measurements[9]->getValue(), measurements[9]->getType());
 }
 
-void ModuleScreenView::setSelected(uint8_t index)
+void ModuleView::setSelected(uint8_t index)
 {
     measurementTile0.setSelected(index == 0);
     measurementTile1.setSelected(index == 0);
@@ -75,13 +75,13 @@ void ModuleScreenView::setSelected(uint8_t index)
     measurementTile9.setSelected(index == 4);
 }
 
-void ModuleScreenView::setTitle(char const *name)
+void ModuleView::setTitle(char const *name)
 {
     Unicode::strncpy(moduleNameBuffer, name, MODULENAME_SIZE);
     moduleName.invalidate();
 }
 
-void ModuleScreenView::hideUnusedTiles(uint8_t nTilesUsed) 
+void ModuleView::hideUnusedTiles(uint8_t nTilesUsed) 
 {
     if (nTilesUsed == 10) return;
 
@@ -126,7 +126,7 @@ void ModuleScreenView::hideUnusedTiles(uint8_t nTilesUsed)
     }
 }
 
-void ModuleScreenView::reset() 
+void ModuleView::reset() 
 {
     measurementTile0.setVisible(true);
     measurementTile1.setVisible(true);
