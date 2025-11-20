@@ -121,7 +121,12 @@ void Model::setChosenModule(char const *name)
 
 void Model::tick()
 {
+  if (pression) timeSincePression = (timeSincePression + 1) % 60;
+  if (timeSincePression > 0) return;
+  pression = false;
+
   if (HAL_GPIO_ReadPin(GPIOA, USER_BUTTON_Pin) == GPIO_PIN_SET) {
+    pression = true;
     modelListener->handleButtonConfirm();
   }
 }

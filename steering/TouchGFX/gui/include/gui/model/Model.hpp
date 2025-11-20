@@ -38,6 +38,9 @@ protected:
     Configuration *configuration;
     char chosenSection[256];
     char chosenModule[256];
+
+    bool pression;
+    int timeSincePression;
 };
 
 #endif // MODEL_HPP
