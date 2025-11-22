@@ -10,22 +10,9 @@ Configuration::Configuration()
   if (!sections || json_getType(sections) != JSON_ARRAY) return;
 
   json_t const *currentJsonSection = json_getChild(sections);
-  if (!currentJsonSection) return;
-
-  firstSection = new Section(currentJsonSection);
-  firstSection->next = nullptr;
-  Section *currentSection = firstSection;
-  nSections = 1;
-
-  currentJsonSection = json_getSibling(currentJsonSection);
-
   while (currentJsonSection) {
-    Section *newSection = new Section(currentJsonSection);
-    newSection->next = nullptr;
-    currentSection->next = newSection;
-    currentSection = newSection;
+    this->sections[nSections++] = Section(currentJsonSection);
 
-    nSections++;
     currentJsonSection = json_getSibling(currentJsonSection);
   }
 }
@@ -35,22 +22,17 @@ uint8_t Configuration::getNSections()
   return nSections;
 }
 
-Section *Configuration::getFirstSection()
+Section *Configuration::getSections()
 {
-  return firstSection;
+  return sections;
 }
 
 Section *Configuration::getSectionByName(const char *name)
 {
-  uint8_t i = 0;
-  Section *current = firstSection;
-
-  while (current && i < nSections) {
+  for (uint8_t i = 0; i < nSections; i++) {
+    Section *current = sections + i;
     if (strcmp(current->getName(), name) == 0)
       return current;
-
-    i++;
-    current = current->next;
   }
   
   return nullptr;

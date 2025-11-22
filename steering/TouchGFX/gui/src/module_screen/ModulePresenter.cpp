@@ -23,7 +23,7 @@ void ModulePresenter::deactivate()
     strcpy(model->previousScreen, "Module");
 }
 
-void ModulePresenter::setMeasurements(Measurement *measurements[], uint8_t nMeasurements)
+void ModulePresenter::setMeasurements(Measurement *measurements, uint8_t nMeasurements)
 {
     ListManager<Measurement>::setItems(measurements, nMeasurements);
 }
@@ -54,7 +54,7 @@ void ModulePresenter::handleButtonBack()
     view.gotoSectionScreen();
 }
 
-void ModulePresenter::updateItemTilesInView(Measurement *items[], uint8_t nItems)
+void ModulePresenter::updateItemTilesInView(Measurement *items, uint8_t nItems)
 {
     view.setMeasurements(items, nItems);
 }

@@ -9,7 +9,7 @@ class ListManager {
 public:
   static const uint8_t MAX_ITEMS = 64;
 
-  void setItems(T *items[], uint8_t nItems)
+  void setItems(T *items, uint8_t nItems)
   {
     this->nItems = nItems;
 
@@ -68,18 +68,17 @@ public:
 protected:
   ListManager(uint8_t maxTiles) : maxTiles(maxTiles) {}
 
-  T *items[MAX_ITEMS];
+  T items[MAX_ITEMS];
   uint8_t nItems;
 
   uint8_t currentIndex;
   uint8_t firstTileIndex;
   uint8_t lastTileIndex;
 
-  virtual void updateItemTilesInView(T *items[], uint8_t nItems);
-  virtual void setSelected();
+  virtual void updateItemTilesInView(T *items, uint8_t nItems) = 0;
+  virtual void setSelected() = 0;
 
   virtual int scrollAmount() { return 1; }
-
 private:
   uint8_t maxTiles;
 
@@ -135,7 +134,7 @@ private:
         )
     );
 
-    T *arrayToPass[static_cast<size_t>(actualLast - actualFirst + 1)];
+    T arrayToPass[static_cast<size_t>(actualLast - actualFirst + 1)];
     if (actualFirst <= actualLast && nItems > 0) {
         for (uint8_t i = actualFirst; i <= actualLast; ++i) {
             arrayToPass[i - actualFirst] = items[i];

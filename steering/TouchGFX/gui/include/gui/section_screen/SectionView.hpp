@@ -13,7 +13,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-    void setModules(Module *modules[], uint8_t nModules);
+    void setModules(Module *modules, uint8_t nModules);
     void setSelected(uint8_t index);
     void setTitle(char const *name);
 private:

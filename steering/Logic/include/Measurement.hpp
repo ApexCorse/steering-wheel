@@ -3,6 +3,8 @@
 
 #include <JsonBase.hpp>
 
+#define CONFIGURATION_MAX_MEASUREMENTS 1
+
 typedef enum MeasurementType { INT = 0, DOUBLE } MeasurementType;
 
 class Measurement : public JsonBase {
@@ -10,19 +12,12 @@ public:
   Measurement();
   Measurement(json_t const *json);
 
-  Measurement *next;
-  void setValue(double newValue);
-  double getValue();
+  void setValue(float newValue);
+  float getValue();
   MeasurementType getType();
 private:
-  double value;
+  float value;
   MeasurementType type;
-
-  bool hasMinValue;
-  bool hasMaxValue;
-  
-  double minValue;
-  double maxValue;
 };
 
 #endif

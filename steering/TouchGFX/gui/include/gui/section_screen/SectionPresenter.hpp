@@ -28,7 +28,7 @@ public:
 
     virtual ~SectionPresenter() {}
 
-    void setModules(Module *modules[], uint8_t nModules) override;
+    void setModules(Module *modules, uint8_t nModules) override;
     void setSectionTitle(char const *name) override;
     void handleButtonDown() override;
     void handleButtonUp() override;
@@ -39,7 +39,7 @@ private:
 
     SectionView& view;
 
-    void updateItemTilesInView(Module *items[], uint8_t nItems) override;
+    void updateItemTilesInView(Module *items, uint8_t nItems) override;
     void setSelected() override;
 };
 

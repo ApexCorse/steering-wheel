@@ -5,27 +5,27 @@
 #include <Module.hpp>
 #include <Summary.hpp>
 
+#define CONFIGURATION_MAX_MODULES 8
+
 class Section : public JsonBase {
 public:
   Section();
   Section(json_t const *json);
 
-  Section *next;
-
   uint8_t getNModules();
-  Module *getFirstModule();
+  Module *getModules();
   Module *getModuleByName(const char *name);
 
   uint8_t getNSummaries();
-  Summary *getFirstSummary();
+  Summary *getSummaries();
   Summary *getSummaryByName(const char *name);
 private:
   // Linked list
-  Module *firstModule;
+  Module modules[CONFIGURATION_MAX_MODULES];
   uint8_t nModules;
 
   // Linked list
-  Summary *firstSummary;
+  Summary *summaries;
   uint8_t nSummaries;
 };
 

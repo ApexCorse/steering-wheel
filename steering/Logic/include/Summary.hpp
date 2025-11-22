@@ -16,13 +16,12 @@ public:
   Summary();
   Summary(json_t const *json);
 
-  Summary *next;
   double calculate();
 private:
   SummaryType type;
 
   // Linked list
-  Measurement *firstMeasurement;
+  Measurement measurements[CONFIGURATION_MAX_MEASUREMENTS];
   uint8_t nMeasurements;
 
   double calculateAvg();

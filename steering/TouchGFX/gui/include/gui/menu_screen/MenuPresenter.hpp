@@ -28,7 +28,7 @@ public:
 
     virtual ~MenuPresenter() {}
 
-    void setSections(Section *sections[], uint8_t nSection) override;
+    void setSections(Section *sections, uint8_t nSection) override;
     void handleButtonDown() override;
     void handleButtonUp() override;
     void handleButtonConfirm() override;
@@ -38,7 +38,7 @@ private:
     
     MenuView& view;
 
-    void updateItemTilesInView(Section *items[], uint8_t nItems) override;
+    void updateItemTilesInView(Section *items, uint8_t nItems) override;
     void setSelected() override;
 };
 

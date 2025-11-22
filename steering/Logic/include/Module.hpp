@@ -4,19 +4,18 @@
 #include <JsonBase.hpp>
 #include <Measurement.hpp>
 
+
 class Module : public JsonBase {
 public:
   Module();
   Module(json_t const *json);
 
-  Module *next;
-
   uint8_t getNMeasurements();
-  Measurement *getFirstMeasurement();
+  Measurement *getMeasurements();
   Measurement *getMeasurementByName(const char *name);
 private:
   // Linked list
-  Measurement *firstMeasurement;
+  Measurement measurements[CONFIGURATION_MAX_MEASUREMENTS];
   uint8_t nMeasurements;
 };
 

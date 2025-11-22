@@ -12,7 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-    void setMeasurements(Measurement *measurements[], uint8_t nMeasurements);
+    void setMeasurements(Measurement *measurements, uint8_t nMeasurements);
     void setSelected(uint8_t index);
     void setTitle(char const *name);
 private:

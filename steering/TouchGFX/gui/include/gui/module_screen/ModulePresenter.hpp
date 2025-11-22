@@ -27,7 +27,7 @@ public:
     virtual void deactivate();
 
     virtual ~ModulePresenter() {}
-    void setMeasurements(Measurement *measurements[], uint8_t nMeasurements) override;
+    void setMeasurements(Measurement *measurements, uint8_t nMeasurements) override;
     void setModuleTitle(char const *name) override;
     void handleButtonDown() override;
     void handleButtonUp() override;
@@ -39,7 +39,7 @@ private:
 
     ModuleView& view;
 
-    void updateItemTilesInView(Measurement *items[], uint8_t nItems) override;
+    void updateItemTilesInView(Measurement *items, uint8_t nItems) override;
     void setSelected();
 };
 

@@ -15,25 +15,25 @@ void SectionView::tearDownScreen()
     SectionViewBase::tearDownScreen();
 }
 
-void SectionView::setModules(Module *modules[], uint8_t nModules)
+void SectionView::setModules(Module *modules, uint8_t nModules)
 {
     reset();
     hideUnusedTiles(nModules);
 
     if (nModules == 0) return;
-    moduleTile0.setText(modules[0]->getName());
+    moduleTile0.setText(modules[0].getName());
 
     if (nModules == 1) return;
-    moduleTile1.setText(modules[1]->getName());
+    moduleTile1.setText(modules[1].getName());
 
     if (nModules == 2) return;
-    moduleTile2.setText(modules[2]->getName());
+    moduleTile2.setText(modules[2].getName());
 
     if (nModules == 3) return;
-    moduleTile3.setText(modules[3]->getName());
+    moduleTile3.setText(modules[3].getName());
 
     if (nModules == 4) return;
-    moduleTile4.setText(modules[4]->getName());
+    moduleTile4.setText(modules[4].getName());
 }
 
 void SectionView::setSelected(uint8_t index)

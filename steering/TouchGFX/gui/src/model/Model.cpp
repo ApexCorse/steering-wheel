@@ -14,48 +14,27 @@ Model::Model() : modelListener(0), configuration(nullptr)
   strcpy(currentScreen, "");
   strcpy(previousScreen, "Drive");
 
-  configuration = new Configuration();
+  configuration = Configuration::instance();
 }
 
 void Model::initSections()
 {
-  Section *sections[MenuPresenter::MAX_ITEMS];
   uint8_t nSections = configuration->getNSections();
-
-  Section *current = configuration->getFirstSection();
-  uint8_t i = 0;
-
-  while (current && nSections < MenuPresenter::MAX_ITEMS) {
-    sections[i] = current;
-
-    i++;
-    current = current->next;
-  }
+  Section *sections = configuration->getSections();
 
   modelListener->setSections(sections, nSections);
 }
 
 void Model::initSectionMenu()
 {  
-  Module *modules[SectionPresenter::MAX_ITEMS];
-  uint8_t nModules = 0;
-
   Section *section = configuration->getSectionByName(chosenSection);
   if (!section) {
-    modelListener->setModules(modules, nModules);
+    modelListener->setModules(nullptr, 0);
     return;
   }
 
-  Module *current = section->getFirstModule();
-  nModules = section->getNModules();
-  uint8_t i = 0;
-
-  while (current && nModules < SectionPresenter::MAX_ITEMS) {
-    modules[i] = current;
-
-    i++;
-    current = current->next;
-  }
+  Module *modules = section->getModules();
+  uint8_t nModules = section->getNModules();
 
   modelListener->setModules(modules, nModules);
 }
@@ -71,31 +50,20 @@ void Model::initSectionTitle()
 
 void Model::initModuleMenu()
 {  
-  Measurement *measurements[ModulePresenter::MAX_ITEMS];
-  uint8_t nMeasurements = 0;
-
   Section *section = configuration->getSectionByName(chosenSection);
   if (!section) {
-    modelListener->setMeasurements(measurements, nMeasurements);
+    modelListener->setMeasurements(nullptr, 0);
     return;
   }
 
   Module *module_ = section->getModuleByName(chosenModule);
   if (!module_) {
-    modelListener->setMeasurements(measurements, nMeasurements);
+    modelListener->setMeasurements(nullptr, 0);
     return;
   }
 
-  Measurement *current = module_->getFirstMeasurement();
-  nMeasurements = module_->getNMeasurements();
-  uint8_t i = 0;
-
-  while (current && nMeasurements < ModulePresenter::MAX_ITEMS) {
-    measurements[i] = current;
-
-    i++;
-    current = current->next;
-  }
+  Measurement *measurements = module_->getMeasurements();
+  uint8_t nMeasurements = module_->getNMeasurements();
 
   modelListener->setMeasurements(measurements, nMeasurements);
 }
