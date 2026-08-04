@@ -57,3 +57,5 @@ EWARM/settings/
 EWARM/STM32F746/
 
 Config
+
+*.dbc
