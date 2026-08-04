@@ -15,64 +15,63 @@ void ModuleView::tearDownScreen()
     ModuleViewBase::tearDownScreen();
 }
 
-void ModuleView::setMeasurements(Measurement *measurements, uint8_t nMeasurements)
+void ModuleView::setSensors(sensor_meta_t *sensors, uint16_t nSensors)
 {
     reset();
-    hideUnusedTiles(nMeasurements);
+    hideUnusedTiles(nSensors);
 
-    if (nMeasurements == 0) return;
-    measurementTile0.setLabel(measurements[0].getName());
-    measurementTile0.setValue(measurements[0].getValue(), measurements[0].getType());
+    if (nSensors == 0) return;
+    sensorTile0.setLabel(sensors[0].name);
+    sensorTile0.setValue(g_sensor_values[sensors[0].global_idx]);
 
-    if (nMeasurements == 1) return;
-    measurementTile1.setLabel(measurements[1].getName());
-    measurementTile1.setValue(measurements[1].getValue(), measurements[1].getType());
+    if (nSensors == 1) return;
+    sensorTile1.setLabel(sensors[1].name);
+    sensorTile1.setValue(g_sensor_values[sensors[1].global_idx]);
+    if (nSensors == 2) return;
+    sensorTile2.setLabel(sensors[2].name);
+    sensorTile2.setValue(g_sensor_values[sensors[2].global_idx]);
 
-    if (nMeasurements == 2) return;
-    measurementTile2.setLabel(measurements[2].getName());
-    measurementTile2.setValue(measurements[2].getValue(), measurements[2].getType());
+    if (nSensors == 3) return;
+    sensorTile3.setLabel(sensors[3].name);
+    sensorTile3.setValue(g_sensor_values[sensors[3].global_idx]);
 
-    if (nMeasurements == 3) return;
-    measurementTile3.setLabel(measurements[3].getName());
-    measurementTile3.setValue(measurements[3].getValue(), measurements[3].getType());
+    if (nSensors == 4) return;
+    sensorTile4.setLabel(sensors[4].name);
+    sensorTile4.setValue(g_sensor_values[sensors[4].global_idx]);
 
-    if (nMeasurements == 4) return;
-    measurementTile4.setLabel(measurements[4].getName());
-    measurementTile4.setValue(measurements[4].getValue(), measurements[4].getType());
+    if (nSensors == 5) return;
+    sensorTile5.setLabel(sensors[5].name);
+    sensorTile5.setValue(g_sensor_values[sensors[5].global_idx]);
 
-    if (nMeasurements == 5) return;
-    measurementTile5.setLabel(measurements[5].getName());
-    measurementTile5.setValue(measurements[5].getValue(), measurements[5].getType());
+    if (nSensors == 6) return;
+    sensorTile6.setLabel(sensors[6].name);
+    sensorTile6.setValue(g_sensor_values[sensors[6].global_idx]);
 
-    if (nMeasurements == 6) return;
-    measurementTile6.setLabel(measurements[6].getName());
-    measurementTile6.setValue(measurements[6].getValue(), measurements[6].getType());
+    if (nSensors == 7) return;
+    sensorTile7.setLabel(sensors[7].name);
+    sensorTile7.setValue(g_sensor_values[sensors[7].global_idx]);
 
-    if (nMeasurements == 7) return;
-    measurementTile7.setLabel(measurements[7].getName());
-    measurementTile7.setValue(measurements[7].getValue(), measurements[7].getType());
+    if (nSensors == 8) return;
+    sensorTile8.setLabel(sensors[8].name);
+		sensorTile8.setValue(g_sensor_values[sensors[8].global_idx]);
 
-    if (nMeasurements == 8) return;
-    measurementTile8.setLabel(measurements[8].getName());
-    measurementTile8.setValue(measurements[8].getValue(), measurements[8].getType());
-
-    if (nMeasurements == 9) return;
-    measurementTile9.setLabel(measurements[9].getName());
-    measurementTile9.setValue(measurements[9].getValue(), measurements[9].getType());
+    if (nSensors == 9) return;
+    sensorTile9.setLabel(sensors[9].name);
+		sensorTile9.setValue(g_sensor_values[sensors[9].global_idx]);
 }
 
 void ModuleView::setSelected(uint8_t index)
 {
-    measurementTile0.setSelected(index == 0);
-    measurementTile1.setSelected(index == 0);
-    measurementTile2.setSelected(index == 1);
-    measurementTile3.setSelected(index == 1);
-    measurementTile4.setSelected(index == 2);
-    measurementTile5.setSelected(index == 2);
-    measurementTile6.setSelected(index == 3);
-    measurementTile7.setSelected(index == 3);
-    measurementTile8.setSelected(index == 4);
-    measurementTile9.setSelected(index == 4);
+    sensorTile0.setSelected(index == 0);
+    sensorTile1.setSelected(index == 0);
+    sensorTile2.setSelected(index == 1);
+    sensorTile3.setSelected(index == 1);
+    sensorTile4.setSelected(index == 2);
+    sensorTile5.setSelected(index == 2);
+    sensorTile6.setSelected(index == 3);
+    sensorTile7.setSelected(index == 3);
+    sensorTile8.setSelected(index == 4);
+    sensorTile9.setSelected(index == 4);
 }
 
 void ModuleView::setTitle(char const *name)
@@ -86,56 +85,56 @@ void ModuleView::hideUnusedTiles(uint8_t nTilesUsed)
     if (nTilesUsed == 10) return;
 
     if (nTilesUsed < 10) {
-        measurementTile9.setVisible(false);
+        sensorTile9.setVisible(false);
     }
 
     if (nTilesUsed < 9) {
-        measurementTile8.setVisible(false);
+        sensorTile8.setVisible(false);
     }
 
     if (nTilesUsed < 8) {
-        measurementTile7.setVisible(false);
+        sensorTile7.setVisible(false);
     }
 
     if (nTilesUsed < 7) {
-        measurementTile6.setVisible(false);
+        sensorTile6.setVisible(false);
     }
 
     if (nTilesUsed < 6) {
-        measurementTile5.setVisible(false);
+        sensorTile5.setVisible(false);
     }
 
     if (nTilesUsed < 5) {
-        measurementTile4.setVisible(false);
+        sensorTile4.setVisible(false);
     }
 
     if (nTilesUsed < 4) {
-        measurementTile3.setVisible(false);
+        sensorTile3.setVisible(false);
     }
 
     if (nTilesUsed < 3) {
-        measurementTile2.setVisible(false);
+        sensorTile2.setVisible(false);
     }
 
     if (nTilesUsed < 2) {
-        measurementTile1.setVisible(false);
+        sensorTile1.setVisible(false);
     }
 
     if (nTilesUsed < 1) {
-        measurementTile0.setVisible(false);
+        sensorTile0.setVisible(false);
     }
 }
 
 void ModuleView::reset() 
 {
-    measurementTile0.setVisible(true);
-    measurementTile1.setVisible(true);
-    measurementTile2.setVisible(true);
-    measurementTile3.setVisible(true);
-    measurementTile4.setVisible(true);
-    measurementTile5.setVisible(true);
-    measurementTile6.setVisible(true);
-    measurementTile7.setVisible(true);
-    measurementTile8.setVisible(true);
-    measurementTile9.setVisible(true);
+    sensorTile0.setVisible(true);
+    sensorTile1.setVisible(true);
+    sensorTile2.setVisible(true);
+    sensorTile3.setVisible(true);
+    sensorTile4.setVisible(true);
+    sensorTile5.setVisible(true);
+    sensorTile6.setVisible(true);
+    sensorTile7.setVisible(true);
+    sensorTile8.setVisible(true);
+    sensorTile9.setVisible(true);
 }

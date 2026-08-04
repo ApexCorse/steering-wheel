@@ -21,37 +21,37 @@ void MenuPresenter::deactivate()
     strcpy(model->previousScreen, "Menu");
 }
 
-void MenuPresenter::setSections(Section *sections, uint8_t nSections)
+void MenuPresenter::setSections(const section_meta_t *sections, uint16_t nSections)
 {
-    ListManager<Section>::setItems(sections, nSections);
+    ListManager<section_meta_t>::setItems(sections, nSections);
 }
 
 void MenuPresenter::handleButtonDown()
 {
     if (strcmp(model->currentScreen, "Menu") != 0) return;
 
-    ListManager<Section>::handleButtonDown();
+    ListManager<section_meta_t>::handleButtonDown();
 }
 
 void MenuPresenter::handleButtonUp()
 {
     if (strcmp(model->currentScreen, "Menu") != 0) return;
 
-    ListManager<Section>::handleButtonUp();
+    ListManager<section_meta_t>::handleButtonUp();
 }
 
 void MenuPresenter::handleButtonConfirm()
 {
     if (strcmp(model->currentScreen, "Menu") != 0) return;
 
-    if (currentIndex < static_cast<uint8_t>(0) || currentIndex >= nItems) return;
+    if (currentIndex < static_cast<uint16_t>(0) || currentIndex >= nItems) return;
 
-    if (strcmp(items[currentIndex].getName(), "Drive") == 0) {
+    if (strcmp(items[currentIndex].name, "Drive") == 0) {
         view.gotoDriveScreen();
-    } else if (strcmp(items[currentIndex].getName(), "Start Up") == 0) {
+    } else if (strcmp(items[currentIndex].name, "Start Up") == 0) {
         view.gotoStartUpScreen();
     } else {
-        model->setChosenSection(items[currentIndex].getName());
+        model->setChosenSection(items[currentIndex].name);
         view.gotoSectionScreen();
     }
 }
@@ -67,7 +67,7 @@ void MenuPresenter::handleButtonBack()
     }
 }
 
-void MenuPresenter::updateItemTilesInView(Section *items, uint8_t nItems)
+void MenuPresenter::updateItemTilesInView(section_meta_t *items, uint16_t nItems)
 {
     view.setSections(items, nItems);
 }

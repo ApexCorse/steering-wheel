@@ -15,24 +15,24 @@ void MenuView::tearDownScreen()
     MenuViewBase::tearDownScreen();
 }
 
-void MenuView::setSections(Section *sections, uint8_t nSections)
+void MenuView::setSections(section_meta_t *sections, uint16_t nSections)
 {
     reset();
     hideUnusedTiles(nSections);
     if (nSections == 0) return;
-    sectionTile0.setText(sections[0].getName());
+    sectionTile0.setText(sections[0].name);
 
     if (nSections == 1) return;
-    sectionTile1.setText(sections[1].getName());
+    sectionTile1.setText(sections[1].name);
 
     if (nSections == 2) return;
-    sectionTile2.setText(sections[2].getName());
+    sectionTile2.setText(sections[2].name);
 
     if (nSections == 3) return;
-    sectionTile3.setText(sections[3].getName());
+    sectionTile3.setText(sections[3].name);
 
     if (nSections == 4) return;
-    sectionTile4.setText(sections[4].getName());
+    sectionTile4.setText(sections[4].name);
 }
 
 void MenuView::setSelected(int index)

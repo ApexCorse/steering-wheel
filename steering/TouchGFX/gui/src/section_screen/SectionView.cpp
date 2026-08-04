@@ -15,28 +15,28 @@ void SectionView::tearDownScreen()
     SectionViewBase::tearDownScreen();
 }
 
-void SectionView::setModules(Module *modules, uint8_t nModules)
+void SectionView::setModules(module_meta_t *modules, uint16_t nModules)
 {
     reset();
     hideUnusedTiles(nModules);
 
     if (nModules == 0) return;
-    moduleTile0.setText(modules[0].getName());
+    moduleTile0.setText(modules[0].name);
 
     if (nModules == 1) return;
-    moduleTile1.setText(modules[1].getName());
+    moduleTile1.setText(modules[1].name);
 
     if (nModules == 2) return;
-    moduleTile2.setText(modules[2].getName());
+    moduleTile2.setText(modules[2].name);
 
     if (nModules == 3) return;
-    moduleTile3.setText(modules[3].getName());
+    moduleTile3.setText(modules[3].name);
 
     if (nModules == 4) return;
-    moduleTile4.setText(modules[4].getName());
+    moduleTile4.setText(modules[4].name);
 }
 
-void SectionView::setSelected(uint8_t index)
+void SectionView::setSelected(uint16_t index)
 {
     moduleTile0.setSelected(index == 0);
     moduleTile1.setSelected(index == 1);
@@ -51,7 +51,7 @@ void SectionView::setTitle(char const *name)
     sectionName.invalidate();
 }
 
-void SectionView::hideUnusedTiles(uint8_t nTilesUsed) 
+void SectionView::hideUnusedTiles(uint16_t nTilesUsed) 
 {
     if (nTilesUsed == 5) return;
 

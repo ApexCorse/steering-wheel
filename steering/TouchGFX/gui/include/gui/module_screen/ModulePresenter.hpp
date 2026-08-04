@@ -9,7 +9,7 @@ using namespace touchgfx;
 
 class ModuleView;
 
-class ModulePresenter : public touchgfx::Presenter, public ModelListener, public ListManager<Measurement>
+class ModulePresenter : public touchgfx::Presenter, public ModelListener, public ListManager<sensor_meta_t>
 {
 public:
     ModulePresenter(ModuleView& v);
@@ -27,7 +27,7 @@ public:
     virtual void deactivate();
 
     virtual ~ModulePresenter() {}
-    void setMeasurements(Measurement *measurements, uint8_t nMeasurements) override;
+    void setSensors(const sensor_meta_t *sensors, uint16_t nSensors) override;
     void setModuleTitle(char const *name) override;
     void handleButtonDown() override;
     void handleButtonUp() override;
@@ -35,11 +35,10 @@ public:
 private:
     ModulePresenter();
 
-    int scrollAmount() override { return 2; }
 
     ModuleView& view;
 
-    void updateItemTilesInView(Measurement *items, uint8_t nItems) override;
+    void updateItemTilesInView(sensor_meta_t *items, uint16_t nItems) override;
     void setSelected();
 };
 

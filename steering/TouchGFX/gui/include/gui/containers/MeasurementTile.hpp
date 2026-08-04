@@ -3,6 +3,11 @@
 
 #include <gui_generated/containers/MeasurementTileBase.hpp>
 
+enum MeasurementType {
+	INT,
+	FLOAT
+};
+
 class MeasurementTile : public MeasurementTileBase
 {
 public:

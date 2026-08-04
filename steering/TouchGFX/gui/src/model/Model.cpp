@@ -6,37 +6,30 @@
 
 #include <cstring>
 #include <main.h>
+#include <sensor_storage.h>
 
-Model::Model() : modelListener(0), configuration(nullptr) 
+Model::Model() : modelListener(0) 
 {
   strcpy(chosenSection, "");
   strcpy(chosenModule, "");
   strcpy(currentScreen, "");
   strcpy(previousScreen, "Drive");
-
-  configuration = Configuration::instance();
 }
 
 void Model::initSections()
 {
-  uint8_t nSections = configuration->getNSections();
-  Section *sections = configuration->getSections();
-
-  modelListener->setSections(sections, nSections);
+  modelListener->setSections(g_sections, SECTION_COUNT);
 }
 
 void Model::initSectionMenu()
 {  
-  Section *section = configuration->getSectionByName(chosenSection);
-  if (!section) {
+	int section_idx = section_find_by_name(chosenSection);
+  if (section_idx < 0) {
     modelListener->setModules(nullptr, 0);
     return;
   }
 
-  Module *modules = section->getModules();
-  uint8_t nModules = section->getNModules();
-
-  modelListener->setModules(modules, nModules);
+  modelListener->setModules(g_modules + g_sections[section_idx].module_start, g_sections[section_idx].module_count);
 }
 
 void Model::initSectionTitle()
@@ -50,22 +43,19 @@ void Model::initSectionTitle()
 
 void Model::initModuleMenu()
 {  
-  Section *section = configuration->getSectionByName(chosenSection);
-  if (!section) {
-    modelListener->setMeasurements(nullptr, 0);
+	int section_idx = section_find_by_name(chosenSection);
+  if (section_idx < 0) {
+    modelListener->setSensors(nullptr, 0);
     return;
   }
 
-  Module *module_ = section->getModuleByName(chosenModule);
-  if (!module_) {
-    modelListener->setMeasurements(nullptr, 0);
-    return;
-  }
+	int module_idx = module_find_by_name(section_idx, chosenModule);
+	if (module_idx < 0) {
+		modelListener->setSensors(nullptr, 0);
+		return;
+	}
 
-  Measurement *measurements = module_->getMeasurements();
-  uint8_t nMeasurements = module_->getNMeasurements();
-
-  modelListener->setMeasurements(measurements, nMeasurements);
+  modelListener->setSensors(g_sensors + g_modules[module_idx].sensor_start, g_modules[module_idx].sensor_count);
 }
 
 void Model::initModuleTitle()

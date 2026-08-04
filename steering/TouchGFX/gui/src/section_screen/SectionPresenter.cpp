@@ -23,9 +23,9 @@ void SectionPresenter::deactivate()
     strcpy(model->previousScreen, "Section");
 }
 
-void SectionPresenter::setModules(Module *modules, uint8_t nModules)
+void SectionPresenter::setModules(const module_meta_t *modules, uint16_t nModules)
 {
-    ListManager<Module>::setItems(modules, nModules);
+    ListManager<module_meta_t>::setItems(modules, nModules);
 }
 
 void SectionPresenter::setSectionTitle(char const *name)
@@ -37,14 +37,14 @@ void SectionPresenter::handleButtonDown()
 {
     if (strcmp(model->currentScreen, "Section") != 0) return;
 
-    ListManager<Module>::handleButtonUp();
+    ListManager<module_meta_t>::handleButtonUp();
 }
 
 void SectionPresenter::handleButtonUp()
 {
     if (strcmp(model->currentScreen, "Section") != 0) return;
 
-    ListManager<Module>::handleButtonUp();
+    ListManager<module_meta_t>::handleButtonUp();
 }
 
 void SectionPresenter::handleButtonConfirm()
@@ -53,7 +53,7 @@ void SectionPresenter::handleButtonConfirm()
 
     if (currentIndex < static_cast<uint8_t>(0) || currentIndex >= nItems) return;
 
-    model->setChosenModule(items[currentIndex].getName());
+    model->setChosenModule(items[currentIndex].name);
     view.gotoModuleScreen();
 }
 
@@ -64,7 +64,7 @@ void SectionPresenter::handleButtonBack()
     view.gotoMenuScreen();
 }
 
-void SectionPresenter::updateItemTilesInView(Module *items, uint8_t nItems)
+void SectionPresenter::updateItemTilesInView(module_meta_t *items, uint16_t nItems)
 {
     view.setModules(items, nItems);
 }

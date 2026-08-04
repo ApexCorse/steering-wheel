@@ -23,9 +23,9 @@ void ModulePresenter::deactivate()
     strcpy(model->previousScreen, "Module");
 }
 
-void ModulePresenter::setMeasurements(Measurement *measurements, uint8_t nMeasurements)
+void ModulePresenter::setSensors(const sensor_meta_t *sensors, uint16_t nSensors)
 {
-    ListManager<Measurement>::setItems(measurements, nMeasurements);
+		ListManager<sensor_meta_t>::setItems(sensors, nSensors);
 }
 
 void ModulePresenter::setModuleTitle(char const *name)
@@ -37,14 +37,14 @@ void ModulePresenter::handleButtonDown()
 {
     if (strcmp(model->currentScreen, "Module") != 0) return;
 
-    ListManager<Measurement>::handleButtonDown();
+    ListManager<sensor_meta_t>::handleButtonDown();
 }
 
 void ModulePresenter::handleButtonUp()
 {
     if (strcmp(model->currentScreen, "Module") != 0) return;
 
-    ListManager<Measurement>::handleButtonUp();
+    ListManager<sensor_meta_t>::handleButtonUp();
 }
 
 void ModulePresenter::handleButtonBack()
@@ -54,9 +54,9 @@ void ModulePresenter::handleButtonBack()
     view.gotoSectionScreen();
 }
 
-void ModulePresenter::updateItemTilesInView(Measurement *items, uint8_t nItems)
+void ModulePresenter::updateItemTilesInView(sensor_meta_t *items, uint16_t nItems)
 {
-    view.setMeasurements(items, nItems);
+    view.setSensors(items, nItems);
 }
 
 void ModulePresenter::setSelected()

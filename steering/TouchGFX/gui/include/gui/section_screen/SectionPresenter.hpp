@@ -9,7 +9,7 @@ using namespace touchgfx;
 
 class SectionView;
 
-class SectionPresenter : public touchgfx::Presenter, public ModelListener, public ListManager<Module>
+class SectionPresenter : public touchgfx::Presenter, public ModelListener, public ListManager<module_meta_t>
 {
 public:
     SectionPresenter(SectionView& v);
@@ -28,7 +28,7 @@ public:
 
     virtual ~SectionPresenter() {}
 
-    void setModules(Module *modules, uint8_t nModules) override;
+    void setModules(const module_meta_t *modules, uint16_t nModules) override;
     void setSectionTitle(char const *name) override;
     void handleButtonDown() override;
     void handleButtonUp() override;
@@ -39,8 +39,9 @@ private:
 
     SectionView& view;
 
-    void updateItemTilesInView(Module *items, uint8_t nItems) override;
+    void updateItemTilesInView(module_meta_t *items, uint16_t nItems) override;
     void setSelected() override;
+
 };
 
 #endif // SECTIONPRESENTER_HPP

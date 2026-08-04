@@ -9,7 +9,7 @@ class ListManager {
 public:
   static const uint8_t MAX_ITEMS = 64;
 
-  void setItems(T *items, uint8_t nItems)
+  void setItems(const T *items, uint8_t nItems)
   {
     this->nItems = nItems;
 
@@ -75,7 +75,7 @@ protected:
   uint8_t firstTileIndex;
   uint8_t lastTileIndex;
 
-  virtual void updateItemTilesInView(T *items, uint8_t nItems) = 0;
+  virtual void updateItemTilesInView(T *items, uint16_t nItems) = 0;
   virtual void setSelected() = 0;
 
   virtual int scrollAmount() { return 1; }
@@ -141,7 +141,7 @@ private:
         }
     }
 
-    updateItemTilesInView(arrayToPass, static_cast<uint8_t>(actualLast - actualFirst + 1));
+    updateItemTilesInView(arrayToPass, static_cast<uint16_t>(actualLast - actualFirst + 1));
   }
 };
 

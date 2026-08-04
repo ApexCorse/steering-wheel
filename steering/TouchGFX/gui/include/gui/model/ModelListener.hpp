@@ -2,6 +2,7 @@
 #define MODELLISTENER_HPP
 
 #include <gui/model/Model.hpp>
+#include <sensor_storage.h>
 
 class ModelListener
 {
@@ -21,9 +22,9 @@ public:
     virtual void setBatteryLevel(int batteryLevel, int minBatteryLevel, int maxBatteryLevel) {}
     virtual void setBatteryPower(int batteryPower, int minBatteryPower, int maxBatteryPower) {}
 
-    virtual void setSections(Section *sections, uint8_t nSections) {}
-    virtual void setModules(Module *modules, uint8_t nModules) {}
-    virtual void setMeasurements(Measurement *measurements, uint8_t nMeasurements) {}
+    virtual void setSections(const section_meta_t *sections, uint16_t nSections) {}
+    virtual void setModules(const module_meta_t *modules, uint16_t nModules) {}
+    virtual void setSensors(const sensor_meta_t *sensors, uint16_t nSensors) {}
     virtual void setSectionTitle(char const *name) {}
     virtual void setModuleTitle(char const *name) {}
 
