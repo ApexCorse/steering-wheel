@@ -35,19 +35,24 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>Logic</name>
-			<type>2</type>
-			<locationURI>$%257BPARENT-1-PROJECT_LOC%257D/Logic</locationURI>
-		</link>
-		<link>
 			<name>STM32F469I-DISCO.ioc</name>
 			<type>1</type>
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/STM32F469I-disco.ioc</locationURI>
 		</link>
 		<link>
-			<name>Configuration/JSON</name>
-			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Config</locationURI>
+			<name>Can/sensor_storage.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Can/sensor_storage.c</locationURI>
+		</link>
+		<link>
+			<name>Can/vera.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Can/vera.c</locationURI>
+		</link>
+		<link>
+			<name>Can/vera_stm32hal.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Can/vera_stm32hal.c</locationURI>
 		</link>
 		<link>
 			<name>Application/User/freertos.c</name>
@@ -83,6 +88,11 @@
 			<name>Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.c</name>
 			<type>1</type>
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_can.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c</locationURI>
 		</link>
 		<link>
 			<name>Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.c</name>
@@ -360,11 +370,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/GeneralMeasurement.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/MeasurementTile.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/MeasurementTile.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/gui/ModuleTile.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/ModuleTile.cpp</locationURI>
@@ -373,6 +378,11 @@
 			<name>Application/User/gui/SectionTile.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/SectionTile.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/SensorTile.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/SensorTile.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/DrivePresenter.cpp</name>
@@ -560,11 +570,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/GeneralMeasurementBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/MeasurementTileBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/MeasurementTileBase.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/ModuleTileBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/ModuleTileBase.cpp</locationURI>
@@ -573,6 +578,11 @@
 			<name>Application/User/generated/SectionTileBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/SectionTileBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/SensorTileBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/SensorTileBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/DriveViewBase.cpp</name>
