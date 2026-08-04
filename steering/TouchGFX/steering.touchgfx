@@ -416,88 +416,88 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "measurementTile9",
+            "Name": "sensorTile9",
             "X": 400,
             "Y": 400,
             "Width": 400,
             "Height": 80,
-            "CustomContainerDefinitionName": "MeasurementTile"
+            "CustomContainerDefinitionName": "SensorTile"
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "measurementTile8",
+            "Name": "sensorTile8",
             "Y": 400,
             "Width": 400,
             "Height": 80,
-            "CustomContainerDefinitionName": "MeasurementTile"
+            "CustomContainerDefinitionName": "SensorTile"
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "measurementTile7",
+            "Name": "sensorTile7",
             "X": 400,
             "Y": 320,
             "Width": 400,
             "Height": 80,
-            "CustomContainerDefinitionName": "MeasurementTile"
+            "CustomContainerDefinitionName": "SensorTile"
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "measurementTile6",
+            "Name": "sensorTile6",
             "Y": 320,
             "Width": 400,
             "Height": 80,
-            "CustomContainerDefinitionName": "MeasurementTile"
+            "CustomContainerDefinitionName": "SensorTile"
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "measurementTile5",
+            "Name": "sensorTile5",
             "X": 400,
             "Y": 240,
             "Width": 400,
             "Height": 80,
-            "CustomContainerDefinitionName": "MeasurementTile"
+            "CustomContainerDefinitionName": "SensorTile"
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "measurementTile4",
+            "Name": "sensorTile4",
             "Y": 240,
             "Width": 400,
             "Height": 80,
-            "CustomContainerDefinitionName": "MeasurementTile"
+            "CustomContainerDefinitionName": "SensorTile"
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "measurementTile3",
+            "Name": "sensorTile3",
             "X": 400,
             "Y": 160,
             "Width": 400,
             "Height": 80,
-            "CustomContainerDefinitionName": "MeasurementTile"
+            "CustomContainerDefinitionName": "SensorTile"
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "measurementTile2",
+            "Name": "sensorTile2",
             "Y": 160,
             "Width": 400,
             "Height": 80,
-            "CustomContainerDefinitionName": "MeasurementTile"
+            "CustomContainerDefinitionName": "SensorTile"
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "measurementTile1",
+            "Name": "sensorTile1",
             "X": 400,
             "Y": 80,
             "Width": 400,
             "Height": 80,
-            "CustomContainerDefinitionName": "MeasurementTile"
+            "CustomContainerDefinitionName": "SensorTile"
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "measurementTile0",
+            "Name": "sensorTile0",
             "Y": 80,
             "Width": 400,
             "Height": 80,
-            "CustomContainerDefinitionName": "MeasurementTile"
+            "CustomContainerDefinitionName": "SensorTile"
           }
         ],
         "Interactions": [
@@ -638,7 +638,7 @@
         "Interactions": []
       },
       {
-        "Name": "MeasurementTile",
+        "Name": "SensorTile",
         "X": 40,
         "Y": 365,
         "Width": 400,
@@ -749,5 +749,5 @@
       "VectorFonts"
     ]
   },
-  "Version": "4.25.0"
+  "Version": "4.26.0"
 }

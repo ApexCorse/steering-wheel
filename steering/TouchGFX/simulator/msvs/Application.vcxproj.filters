@@ -285,9 +285,6 @@
     <ClCompile Include="..\..\gui\src\containers\MeasurementTile.cpp">
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\MeasurementTileBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\drive_screen\DrivePresenter.cpp">
       <Filter>Source Files\gui\drive_screen</Filter>
     </ClCompile>
@@ -323,6 +320,12 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\section_screen\SectionViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\section_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\SensorTile.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SensorTileBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -787,9 +790,6 @@
     <ClInclude Include="..\..\gui\include\gui\containers\MeasurementTile.hpp">
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\MeasurementTileBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\drive_screen\DrivePresenter.hpp">
       <Filter>Header Files\gui\drive_screen</Filter>
     </ClInclude>
@@ -828,6 +828,12 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\section_screen\SectionViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\section_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\SensorTile.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SensorTileBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

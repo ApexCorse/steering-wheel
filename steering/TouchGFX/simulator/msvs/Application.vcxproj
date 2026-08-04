@@ -28,7 +28,6 @@
     <ClCompile Include="..\..\gui\src\containers\SectionTile.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\SectionTileBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\MeasurementTile.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\MeasurementTileBase.cpp"/>
     <ClCompile Include="..\..\gui\src\drive_screen\DrivePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\drive_screen\DriveView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\drive_screen\DriveViewBase.cpp"/>
@@ -41,6 +40,8 @@
     <ClCompile Include="..\..\gui\src\section_screen\SectionPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\section_screen\SectionView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\section_screen\SectionViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\SensorTile.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SensorTileBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -198,7 +199,6 @@
     <ClInclude Include="..\..\gui\include\gui\containers\SectionTile.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SectionTileBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\MeasurementTile.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\MeasurementTileBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\drive_screen\DrivePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\drive_screen\DriveView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\drive_screen\DriveViewBase.hpp"/>
@@ -212,6 +212,8 @@
     <ClInclude Include="..\..\gui\include\gui\section_screen\SectionPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\section_screen\SectionView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\section_screen\SectionViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\SensorTile.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SensorTileBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
